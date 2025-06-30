@@ -230,6 +230,7 @@ h1, h2, h3 {
     cursor: pointer;
     position: absolute;
     right: 2rem;
+    padding: 1rem;
 }
 
 .hamburger span {
@@ -244,6 +245,19 @@ h1, h2, h3 {
 /* Sections */
 section {
     padding: 5rem 0;
+}
+
+/* Accommodation Section - Fix list bullets for all devices */
+#allotjament ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+#allotjament li {
+    padding: 0.5rem 0;
+    border-bottom: none;
+    margin-left: 0;
 }
 
 .ceremony-section {
@@ -628,6 +642,9 @@ section {
     
     .hamburger {
         display: flex;
+        right: 1rem;
+        padding: 2rem 1.5rem;
+        margin: 1rem 0;
     }
     
     .hamburger.active span:nth-child(2) {
@@ -652,13 +669,16 @@ section {
     }
     
     .timeline::before {
-        left: 30px;
+        left: 40px;
     }
     
     .timeline-time {
-        width: 60px;
-        padding: 0.5rem;
-        font-size: 0.9rem;
+        width: 80px;
+        height: 80px;
+        padding: 0.8rem;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.2;
     }
     
     .timeline-content {
@@ -681,6 +701,24 @@ section {
     
     .rsvp-form {
         padding: 2rem;
+    }
+    
+    /* Better navbar spacing on mobile */
+    .nav-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    /* Fix accommodation list bullets on mobile */
+    #allotjament ul {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    
+    #allotjament li {
+        padding: 0.5rem 0;
+        border-bottom: none;
+        margin-left: 0;
     }
 }
 
@@ -724,6 +762,30 @@ section {
     
     .rsvp-form {
         padding: 1.5rem;
+    }
+    
+    .timeline-time {
+        width: 75px;
+        height: 75px;
+        padding: 0.7rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+    }
+    
+    .timeline-content {
+        margin-left: 0.8rem;
+        padding: 1.2rem;
+    }
+    
+    /* Fix accommodation list bullets on mobile */
+    #allotjament ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    #allotjament li {
+        padding: 0.5rem 0;
+        border-bottom: none;
     }
 }
 
