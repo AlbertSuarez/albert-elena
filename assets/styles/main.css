@@ -66,7 +66,7 @@ h1, h2, h3 {
     justify-content: center;
     text-align: center;
     padding: 2rem 1rem;
-    background: linear-gradient(135deg, var(--background-color) 0%, #F0E1CE 100%);
+    background-color: var(--background-color);
     position: relative;
 }
 
@@ -75,66 +75,113 @@ h1, h2, h3 {
     margin: 0 auto;
 }
 
-.couple-photo {
+.couple-names-header {
+    font-family: 'Amatic SC', 'Fredoka One', cursive;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--text-color);
     margin-bottom: 2rem;
+    letter-spacing: 3px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    -webkit-text-stroke: 1px var(--text-color);
+    font-variation-settings: 'wght' 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rings {
     position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.rings::before,
+.rings::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--text-color);
+    border-radius: 50%;
+    top: 0;
+}
+
+.rings::before {
+    left: 0;
+    z-index: 1;
+}
+
+.rings::after {
+    right: 0;
+    z-index: 2;
+}
+
+.couple-photo {
+    margin-bottom: 3rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .couple-img {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
-    border: 8px solid var(--white);
-    box-shadow: 0 10px 30px var(--shadow);
+    border: 12px solid var(--white);
+    box-shadow: 0 15px 40px var(--shadow);
     transition: var(--transition);
 }
 
 .couple-img:hover {
-    transform: scale(1.05);
-}
-
-.couple-names {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 2rem;
-    letter-spacing: 2px;
+    transform: scale(1.02);
 }
 
 .wedding-details {
     background: var(--primary-color);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: 0 8px 25px var(--shadow);
+    padding: 2.5rem 2rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px var(--shadow);
     color: var(--white);
-    margin-top: 2rem;
+    margin-top: 0;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .wedding-title {
     font-family: 'Dancing Script', cursive;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-transform: lowercase;
 }
 
 .wedding-date {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
     font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
 }
 
 .wedding-location {
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
 }
 
 .heart {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: 1rem;
+    opacity: 0.9;
 }
 
 /* Navigation */
@@ -536,12 +583,26 @@ section {
         padding: 0 15px;
     }
     
-    .couple-names {
-        font-size: 2.2rem;
+    .couple-names-header {
+        font-size: 3rem;
+        letter-spacing: 2px;
+    }
+    
+    .rings {
+        width: 60px;
+        height: 30px;
+        margin-left: 8px;
+    }
+    
+    .rings::before,
+    .rings::after {
+        width: 30px;
+        height: 30px;
+        border: 3px solid var(--text-color);
     }
     
     .wedding-date {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
     }
     
     .section-title {
@@ -624,21 +685,37 @@ section {
 }
 
 @media (max-width: 480px) {
-    .couple-names {
-        font-size: 1.8rem;
+    .couple-names-header {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .rings {
+        width: 50px;
+        height: 25px;
+        margin-left: 5px;
+    }
+    
+    .rings::before,
+    .rings::after {
+        width: 25px;
+        height: 25px;
+        border: 2px solid var(--text-color);
     }
     
     .wedding-date {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
     }
     
     .couple-img {
-        width: 180px;
-        height: 180px;
+        width: 220px;
+        height: 220px;
+        border: 8px solid var(--white);
     }
     
     .wedding-details {
-        padding: 1rem;
+        padding: 1.5rem;
+        max-width: 320px;
     }
     
     .section-title {
@@ -657,16 +734,36 @@ section {
     }
     
     .couple-img {
-        width: 320px;
-        height: 320px;
+        width: 350px;
+        height: 350px;
+        border: 15px solid var(--white);
     }
     
-    .couple-names {
-        font-size: 3.5rem;
+    .couple-names-header {
+        font-size: 4.5rem;
+        letter-spacing: 4px;
+    }
+    
+    .rings {
+        width: 90px;
+        height: 45px;
+        margin-left: 15px;
+    }
+    
+    .rings::before,
+    .rings::after {
+        width: 45px;
+        height: 45px;
+        border: 5px solid var(--text-color);
     }
     
     .wedding-date {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
+    }
+    
+    .wedding-details {
+        max-width: 450px;
+        padding: 3rem 2.5rem;
     }
     
     .section-title {
