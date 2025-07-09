@@ -1,0 +1,248 @@
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #F5E6D3;
+  position: relative;
+}
+
+.heroContent {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-out;
+}
+
+.coupleNamesHeader {
+  font-family: 'Amatic SC', 'Fredoka One', cursive;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #2C3E2C;
+  margin-bottom: 2rem;
+  letter-spacing: 3px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  -webkit-text-stroke: 1px #2C3E2C;
+  font-variation-settings: 'wght' 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation-delay: 0.2s;
+}
+
+.rings {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.rings::before,
+.rings::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #2C3E2C;
+  border-radius: 50%;
+  top: 0;
+}
+
+.rings::before {
+  left: 0;
+  z-index: 1;
+}
+
+.rings::after {
+  right: 0;
+  z-index: 2;
+}
+
+.couplePhoto {
+  margin-bottom: 3rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  animation-delay: 0.4s;
+}
+
+.coupleImg {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 12px solid #FFFFFF;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.coupleImg:hover {
+  transform: scale(1.02);
+}
+
+.weddingDetails {
+  background: #8FBC8F;
+  padding: 2.5rem 2rem;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  color: #FFFFFF;
+  margin-top: 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  animation-delay: 0.6s;
+}
+
+.weddingTitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: lowercase;
+}
+
+.weddingDate {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+}
+
+.weddingLocation {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.heart {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  opacity: 0.9;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroContent > * {
+  animation: fadeInUp 1s ease-out;
+}
+
+.heroContent > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.heroContent > *:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .coupleNamesHeader {
+    font-size: 3rem;
+  }
+  
+  .rings {
+    width: 60px;
+    height: 30px;
+  }
+  
+  .rings::before,
+  .rings::after {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .weddingDate {
+    font-size: 3rem;
+  }
+  
+  .coupleImg {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .weddingDetails {
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coupleNamesHeader {
+    font-size: 2.5rem;
+  }
+  
+  .rings {
+    width: 50px;
+    height: 25px;
+  }
+  
+  .rings::before,
+  .rings::after {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .weddingDate {
+    font-size: 2.5rem;
+  }
+  
+  .coupleImg {
+    width: 200px;
+    height: 200px;
+    border-width: 8px;
+  }
+  
+  .weddingDetails {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+  
+  .coupleImg {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .coupleNamesHeader {
+    font-size: 4.5rem;
+  }
+  
+  .rings {
+    width: 90px;
+    height: 45px;
+  }
+  
+  .rings::before,
+  .rings::after {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .weddingDate {
+    font-size: 4.5rem;
+  }
+  
+  .weddingDetails {
+    padding: 3rem 2.5rem;
+  }
+} 

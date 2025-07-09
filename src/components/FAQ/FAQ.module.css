@@ -1,0 +1,93 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2C3E2C;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #8FBC8F, #98C9A3);
+  border-radius: 2px;
+}
+
+.faqSection {
+  padding: 4rem 0;
+  background: #FFFFFF;
+}
+
+.faqList {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  margin-bottom: 1rem;
+  border: 2px solid #F5E6D3;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faqQuestion {
+  width: 100%;
+  padding: 1.5rem;
+  background: #F5E6D3;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2C3E2C;
+  transition: all 0.3s ease;
+}
+
+.faqQuestion:hover {
+  background: #8FBC8F;
+  color: #FFFFFF;
+}
+
+.faqIcon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.faqItem.active .faqIcon {
+  transform: rotate(45deg);
+}
+
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #FFFFFF;
+}
+
+.faqItem.active .faqAnswer {
+  max-height: 200px;
+  padding: 1.5rem;
+}
+
+.faqAnswer p {
+  margin: 0;
+  color: #5A6B5A;
+  line-height: 1.6;
+} 
