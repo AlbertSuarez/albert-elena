@@ -247,17 +247,55 @@ section {
     padding: 5rem 0;
 }
 
-/* Accommodation Section - Fix list bullets for all devices */
+/* Accommodation Section */
+.accommodation-section {
+    background: linear-gradient(135deg, var(--background-color) 0%, #F0E1CE 100%);
+}
+
+.accommodation-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accommodation-info {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.accommodation-info h3 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.accommodation-info > p:first-of-type {
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.accommodation-info > p:last-of-type {
+    margin-top: 2.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+/* Fix list bullets for all devices */
 #allotjament ul {
     list-style: none;
     padding-left: 0;
     margin-left: 0;
+    margin-bottom: 0;
 }
 
 #allotjament li {
-    padding: 0.5rem 0;
+    padding: 0.8rem 0;
     border-bottom: none;
     margin-left: 0;
+    font-size: 1.05rem;
+    color: var(--text-color);
 }
 
 .ceremony-section {
@@ -710,14 +748,26 @@ section {
     }
     
     /* Fix accommodation list bullets on mobile */
+        .accommodation-info {
+        padding: 2rem;
+    }
+
+    .accommodation-info > p:first-of-type {
+        margin-bottom: 2rem;
+    }
+
+    .accommodation-info > p:last-of-type {
+        margin-top: 2rem;
+    }
+
     #allotjament ul {
         list-style: none;
         padding-left: 0;
         margin-left: 0;
     }
-    
+
     #allotjament li {
-        padding: 0.5rem 0;
+        padding: 0.7rem 0;
         border-bottom: none;
         margin-left: 0;
     }
@@ -778,14 +828,26 @@ section {
         padding: 1.2rem;
     }
     
+        .accommodation-info {
+        padding: 1.5rem;
+    }
+
+    .accommodation-info > p:first-of-type {
+        margin-bottom: 1.8rem;
+    }
+
+    .accommodation-info > p:last-of-type {
+        margin-top: 1.8rem;
+    }
+
     /* Fix accommodation list bullets on mobile */
     #allotjament ul {
         list-style: none;
         padding-left: 0;
     }
-    
+
     #allotjament li {
-        padding: 0.5rem 0;
+        padding: 0.6rem 0;
         border-bottom: none;
     }
 }
