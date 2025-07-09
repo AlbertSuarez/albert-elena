@@ -78,6 +78,11 @@ function handleFormSubmission(e) {
         if (response.ok) {
             showNotification('Gràcies per la vostra confirmació!', 'success');
             rsvpForm.reset();
+            
+            // Redirect to thank you page after a short delay
+            setTimeout(() => {
+                window.location.href = 'thank-you.html';
+            }, 1500);
         } else {
             // Handle error responses (400, 403, 500, etc.)
             return response.json().then(data => {
