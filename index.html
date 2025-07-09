@@ -240,17 +240,17 @@
                 <form class="rsvp-form" id="rsvpForm" action="https://formspree.io/f/xdkzrryn" method="POST">
                     <div class="form-group">
                         <label for="name">Nom complet *</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" required placeholder="Joan Pere">
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Correu electrònic *</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="exemple@correu.com">
                     </div>
                     
                     <div class="form-group">
                         <label for="phone">Telèfon *</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="tel" id="phone" name="phone" required pattern="[0-9\s\+\-\(\)]*" inputmode="numeric" placeholder="Exemple: 666555444">
                     </div>
                     
                     <div class="form-group">

@@ -36,26 +36,47 @@ function toggleFAQ(question) {
 function handleFormSubmission(e) {
     e.preventDefault();
     
-    // Get form data
-    const formData = new FormData(rsvpForm);
-    const data = Object.fromEntries(formData);
+    // Get form data and trim all string values
+    const originalFormData = new FormData(rsvpForm);
+    const data = Object.fromEntries(originalFormData);
     
-    // Basic validation
-    if (!data.name || !data.email || !data.phone) {
+    // Trim all string values
+    const trimmedData = {};
+    for (const [key, value] of Object.entries(data)) {
+        trimmedData[key] = typeof value === 'string' ? value.trim() : value;
+    }
+    
+    // Update form fields with trimmed values
+    for (const [key, value] of Object.entries(trimmedData)) {
+        const field = rsvpForm.querySelector(`[name="${key}"]`);
+        if (field && typeof value === 'string') {
+            field.value = value;
+        }
+    }
+    
+    // Create new FormData with trimmed values
+    const formData = new FormData();
+    for (const [key, value] of Object.entries(trimmedData)) {
+        formData.append(key, value);
+    }
+    
+    // Basic validation (using trimmed data)
+    if (!trimmedData.name || !trimmedData.email || !trimmedData.phone) {
         showNotification('Si us plau, ompliu tots els camps obligatoris.', 'error');
         return;
     }
     
     // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-        showNotification('Si us plau, introduïu un correu electrònic vàlid.', 'error');
+    const emailInput = document.getElementById('email');
+    if (!validateEmailField(emailInput)) {
+        showNotification('Si us plau, introduïu un correu electrònic vàlid (exemple@correu.com)', 'error');
         return;
     }
     
-    // Phone validation (basic)
-    if (data.phone && data.phone.length < 9) {
-        showNotification('Si us plau, introduïu un número de telèfon vàlid.', 'error');
+    // Phone validation
+    const phoneInput = document.getElementById('phone');
+    if (!validatePhoneField(phoneInput)) {
+        showNotification('Si us plau, introduïu un número de telèfon vàlid (mínim 9 dígits)', 'error');
         return;
     }
     
@@ -176,6 +197,77 @@ function hideNotification(notification) {
             notification.remove();
         }
     }, 300);
+}
+
+// Email validation helper function
+function validateEmailField(emailInput) {
+    const emailValue = emailInput.value.trim();
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+    // Update the input field with trimmed value
+    emailInput.value = emailValue;
+    
+    if (emailValue && !emailRegex.test(emailValue)) {
+        emailInput.setCustomValidity('Si us plau, introduïu un correu electrònic vàlid (exemple@correu.com)');
+        emailInput.classList.add('invalid');
+        return false;
+    } else {
+        emailInput.setCustomValidity('');
+        emailInput.classList.remove('invalid');
+        return true;
+    }
+}
+
+// Utility function to trim input field value
+function trimInputField(input) {
+    if (input && typeof input.value === 'string') {
+        input.value = input.value.trim();
+    }
+}
+
+// Phone validation helper function
+function validatePhoneField(phoneInput) {
+    const phoneValue = phoneInput.value.trim();
+    
+    // Update the input field with trimmed value
+    phoneInput.value = phoneValue;
+    
+    // Remove all non-digit characters to count actual digits
+    const digitsOnly = phoneValue.replace(/\D/g, '');
+    
+    // Check if phone is required and empty
+    if (!phoneValue) {
+        phoneInput.setCustomValidity('El número de telèfon és obligatori');
+        phoneInput.classList.add('invalid');
+        return false;
+    }
+    
+    // Check minimum length (9 digits for Spanish phones)
+    if (digitsOnly.length < 9) {
+        phoneInput.setCustomValidity('El número de telèfon ha de tenir almenys 9 dígits');
+        phoneInput.classList.add('invalid');
+        return false;
+    }
+    
+    // Check maximum length (15 digits is international standard)
+    if (digitsOnly.length > 15) {
+        phoneInput.setCustomValidity('El número de telèfon no pot tenir més de 15 dígits');
+        phoneInput.classList.add('invalid');
+        return false;
+    }
+    
+    // Check for valid characters (digits, spaces, +, -, (, ))
+    const phoneRegex = /^[0-9\s\+\-\(\)]+$/;
+    if (!phoneRegex.test(phoneValue)) {
+        phoneInput.setCustomValidity('El número de telèfon conté caràcters no vàlids');
+        phoneInput.classList.add('invalid');
+        return false;
+    }
+    
+    // All validations passed
+    phoneInput.setCustomValidity('');
+    phoneInput.classList.remove('invalid');
+    return true;
 }
 
 // Smooth scroll for navigation links
@@ -324,6 +416,95 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form submission
     if (rsvpForm) {
         rsvpForm.addEventListener('submit', handleFormSubmission);
+        
+        // Phone number input formatting and validation
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput) {
+            // Real-time validation on blur
+            phoneInput.addEventListener('blur', function(e) {
+                validatePhoneField(e.target);
+            });
+            
+            // Input formatting and real-time validation
+            let phoneValidationTimeout;
+            phoneInput.addEventListener('input', function(e) {
+                // Remove any non-numeric characters except +, -, (, ), and spaces
+                let value = e.target.value.replace(/[^0-9\+\-\(\)\s]/g, '');
+                e.target.value = value;
+                
+                // Clear custom validity message when user starts typing
+                e.target.setCustomValidity('');
+                e.target.classList.remove('invalid');
+                
+                // Clear any existing timeout
+                clearTimeout(phoneValidationTimeout);
+                
+                // Validate after user stops typing for 500ms
+                phoneValidationTimeout = setTimeout(() => {
+                    if (e.target.value.trim()) {
+                        validatePhoneField(e.target);
+                    }
+                }, 500);
+            });
+            
+            phoneInput.addEventListener('keypress', function(e) {
+                // Allow only numbers, +, -, (, ), space, and control keys
+                const allowedChars = /[0-9\+\-\(\)\s]/;
+                const controlKeys = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'];
+                
+                if (!allowedChars.test(e.key) && !controlKeys.includes(e.key)) {
+                    e.preventDefault();
+                }
+            });
+            
+            // Prevent form submission with invalid phone
+            phoneInput.addEventListener('invalid', function(e) {
+                e.preventDefault();
+                validatePhoneField(e.target);
+                showNotification('Si us plau, introduïu un número de telèfon vàlid (mínim 9 dígits)', 'error');
+            });
+        }
+        
+        // Email validation
+        const emailInput = document.getElementById('email');
+        if (emailInput) {
+            // Real-time validation on blur
+            emailInput.addEventListener('blur', function(e) {
+                validateEmailField(e.target);
+            });
+            
+            // Real-time validation on input (with debounce)
+            let emailValidationTimeout;
+            emailInput.addEventListener('input', function(e) {
+                // Clear custom validity message when user starts typing
+                e.target.setCustomValidity('');
+                
+                // Clear any existing timeout
+                clearTimeout(emailValidationTimeout);
+                
+                // Validate after user stops typing for 500ms
+                emailValidationTimeout = setTimeout(() => {
+                    if (e.target.value.trim()) {
+                        validateEmailField(e.target);
+                    }
+                }, 500);
+            });
+            
+            // Prevent form submission with invalid email
+            emailInput.addEventListener('invalid', function(e) {
+                e.preventDefault();
+                validateEmailField(e.target);
+                showNotification('Si us plau, introduïu un correu electrònic vàlid (exemple@correu.com)', 'error');
+            });
+        }
+        
+        // Add automatic trimming to all text inputs and textareas
+        const textInputs = rsvpForm.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
+        textInputs.forEach(input => {
+            input.addEventListener('blur', function(e) {
+                trimInputField(e.target);
+            });
+        });
     }
     
     // Scroll events
@@ -403,6 +584,9 @@ if (typeof module !== 'undefined' && module.exports) {
         toggleFAQ,
         handleFormSubmission,
         showNotification,
-        hideNotification
+        hideNotification,
+        validateEmailField,
+        validatePhoneField,
+        trimInputField
     };
 } 
