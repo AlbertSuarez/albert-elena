@@ -74,22 +74,33 @@ function handleFormSubmission(e) {
         }
     })
     .then(response => {
+        // Handle successful responses (200-299)
         if (response.ok) {
             showNotification('Gràcies per la vostra confirmació!', 'success');
             rsvpForm.reset();
         } else {
-            response.json().then(data => {
-                if (data.errors) {
-                    showNotification('Hi ha hagut un error. Si us plau, intenteu-ho de nou.', 'error');
+            // Handle error responses (400, 403, 500, etc.)
+            return response.json().then(data => {
+                console.error('Formspree error:', data);
+                
+                // Check for specific Formspree errors
+                if (data.error && data.error.includes('reCAPTCHA')) {
+                    showNotification('Error: reCAPTCHA està activat. Si us plau, desactiveu-lo a la configuració de Formspree o contacteu amb nosaltres.', 'error');
+                } else if (data.error && data.error.includes('AJAX')) {
+                    showNotification('Error: Configuració de Formspree incorrecta. Si us plau, contacteu amb nosaltres.', 'error');
+                } else if (data.errors) {
+                    showNotification('Hi ha hagut un error en el formulari. Si us plau, reviseu els camps i intenteu-ho de nou.', 'error');
                 } else {
-                    showNotification('Gràcies per la vostra confirmació!', 'success');
-                    rsvpForm.reset();
+                    showNotification(`Error ${response.status}: ${data.error || 'Hi ha hagut un error. Si us plau, intenteu-ho de nou.'}`, 'error');
                 }
+            }).catch(() => {
+                // If we can't parse the JSON response
+                showNotification(`Error ${response.status}: Hi ha hagut un error. Si us plau, intenteu-ho de nou.`, 'error');
             });
         }
     })
     .catch(error => {
-        console.error('Error:', error);
+        console.error('Network error:', error);
         showNotification('Hi ha hagut un error de connexió. Si us plau, intenteu-ho de nou.', 'error');
     })
     .finally(() => {
