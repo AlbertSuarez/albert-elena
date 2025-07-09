@@ -32,7 +32,7 @@ function toggleFAQ(question) {
     }
 }
 
-// Form Submission
+// Form Submission with Formspree
 function handleFormSubmission(e) {
     e.preventDefault();
     
@@ -41,7 +41,7 @@ function handleFormSubmission(e) {
     const data = Object.fromEntries(formData);
     
     // Basic validation
-    if (!data.name || !data.email || !data.guests) {
+    if (!data.name || !data.email || !data.phone) {
         showNotification('Si us plau, ompliu tots els camps obligatoris.', 'error');
         return;
     }
@@ -53,14 +53,50 @@ function handleFormSubmission(e) {
         return;
     }
     
-    // Simulate form submission
-    showNotification('Gràcies per la vostra confirmació! Rebreu un correu de confirmació aviat.', 'success');
+    // Phone validation (basic)
+    if (data.phone && data.phone.length < 9) {
+        showNotification('Si us plau, introduïu un número de telèfon vàlid.', 'error');
+        return;
+    }
     
-    // Reset form
-    rsvpForm.reset();
+    // Show loading state
+    const submitBtn = rsvpForm.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Enviant...';
+    submitBtn.disabled = true;
     
-    // In a real application, you would send this data to a server
-    console.log('Form data:', data);
+    // Submit to Formspree
+    fetch(rsvpForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            showNotification('Gràcies per la vostra confirmació!', 'success');
+            rsvpForm.reset();
+        } else {
+            response.json().then(data => {
+                if (data.errors) {
+                    showNotification('Hi ha hagut un error. Si us plau, intenteu-ho de nou.', 'error');
+                } else {
+                    showNotification('Gràcies per la vostra confirmació!', 'success');
+                    rsvpForm.reset();
+                }
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showNotification('Hi ha hagut un error de connexió. Si us plau, intenteu-ho de nou.', 'error');
+    })
+    .finally(() => {
+        // Restore button state
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
 }
 
 // Show notification
