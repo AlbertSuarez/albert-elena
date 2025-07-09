@@ -382,6 +382,7 @@ section {
 .timeline-time {
     flex-shrink: 0;
     width: 100px;
+    height: 100px;
     text-align: center;
     font-weight: 700;
     font-size: 1.1rem;
