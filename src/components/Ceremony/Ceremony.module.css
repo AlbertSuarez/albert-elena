@@ -1,3 +1,8 @@
+.ceremonySection {
+  background-color: var(--secondary);
+  padding: 4rem 0;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -9,7 +14,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  color: #2C3E2C;
+  color: var(--grey);
   margin-bottom: 3rem;
   position: relative;
 }
@@ -24,11 +29,6 @@
   height: 3px;
   background: linear-gradient(90deg, #8FBC8F, #98C9A3);
   border-radius: 2px;
-}
-
-.ceremonySection {
-  padding: 4rem 0;
-  background: #FFFFFF;
 }
 
 .ceremonyContent {
@@ -48,7 +48,7 @@
 
 .venueInfo h3 {
   font-size: 1.5rem;
-  color: #2C3E2C;
+  color: var(--grey);
   margin-bottom: 1rem;
 }
 
@@ -59,17 +59,7 @@
 .detailItem {
   margin-bottom: 1rem;
   font-size: 1.1rem;
-  color: #5A6B5A;
-}
-
-.detailItem a {
-  color: #8FBC8F;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.detailItem a:hover {
-  color: #7A9F7A;
+  color: var(--grey);
 }
 
 @media (max-width: 768px) {

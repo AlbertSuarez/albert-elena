@@ -2,17 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Import Custom Utilities */
+@import '../styles/utilities.css';
+
+/* Custom Font */
+@font-face {
+  font-family: 'Le Petit Cochon';
+  src: url('/assets/fonts/le-petit-cochon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --primary-color: #8FBC8F;
-  --secondary-color: #98C9A3;
-  --accent-color: #7A9F7A;
-  --background-color: #F5E6D3;
-  --text-color: #2C3E2C;
-  --text-light: #5A6B5A;
+  --background: #EBDAA8;
+  --grey: #2C2C2C;
+  --primary: #313930;
+  --primary-light: #A2BBA0;
+  --secondary: #CA9C8D;
   --white: #FFFFFF;
   --shadow: rgba(0, 0, 0, 0.1);
   --border-radius: 15px;
   --transition: all 0.3s ease;
+  
+  /* Legacy variables for backward compatibility */
+  --primary-color: #A2BBA0;
+  --secondary-color: #CA9C8D;
+  --accent-color: #313930;
+  --background-color: #EBDAA8;
+  --text-color: #313930;
+  --text-light: #5A6B5A;
 }
 
 * {

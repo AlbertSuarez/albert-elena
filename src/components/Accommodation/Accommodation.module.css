@@ -28,7 +28,7 @@
 
 .accommodationSection {
   padding: 4rem 0;
-  background: #F5E6D3;
+  background-color: var(--secondary);
 }
 
 .accommodationContent {

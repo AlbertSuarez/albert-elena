@@ -1,5 +1,7 @@
+'use client';
 import React from 'react';
 import styles from './Ceremony.module.css';
+import Button from '../Button/Button';
 
 const Ceremony: React.FC = () => {
   return (
@@ -13,17 +15,15 @@ const Ceremony: React.FC = () => {
             <img src="/assets/images/mas-muxach.jpg" alt="Mas Muxach" className={styles.venueImg} />
           </div>
           <div className={styles.venueInfo}>
-            <h3>Masia Mas Muxach, Brunyola (Girona)</h3>
-            <p>A 1h 15min de Barcelona</p>
             <div className={styles.ceremonyDetails}>
               <div className={styles.detailItem}>
                 <strong>Data:</strong> 11 d&apos;abril de 2026 (Dissabte)
               </div>
               <div className={styles.detailItem}>
-                <strong>Hora d&apos;inici:</strong> 12:30h
+                Masia Mas Muxach, Brunyola (Girona)
               </div>
               <div className={styles.detailItem}>
-                <strong>Ubicació:</strong> <a href="https://maps.app.goo.gl/V6TaM6MgLW6GKd8U9" target="_blank" rel="noopener noreferrer">Mas Muxach</a>
+                <Button onClick={() => { window.open('https://maps.app.goo.gl/V6TaM6MgLW6GKd8U9', '_blank') }}>Veure Ubicació</Button>
               </div>
             </div>
           </div>
