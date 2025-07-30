@@ -21,6 +21,11 @@ jobs:
       group: "pages"
       cancel-in-progress: false
 
+    # Add environment targeting Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -42,13 +47,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Configure git for gh-pages deployment
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+      - name: Build Next.js app
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './out'
 
       - name: Deploy to GitHub Pages
-        run: npm run deploy
-        env:
-          # This token is provided by Actions, you do not need to create your own token
-          GH_TOKEN: ${{ github.token }}
+        id: deployment
+        uses: actions/deploy-pages@v4
