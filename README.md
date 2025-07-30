@@ -49,23 +49,6 @@
    http://localhost:3000
    ```
 
-### Build and Deploy
-
-1. **Build the application:**
-
-   ```bash
-   npm run build
-   ```
-
-2. **Deploy to GitHub Pages:**
-
-   ```bash
-   npm run deploy
-   ```
-
-> [!TIP]
-> The deployment process automatically builds the application before deploying via the `predeploy` script.
-
 ## Summary
 
 This is a simple, static, and responsive wedding website celebrating the marriage of Albert and Elena on **April 11th, 2026**. The wedding will take place at [Mas Muxach](https://maps.app.goo.gl/V6TaM6MgLW6GKd8U9), and guests are invited to stay overnight from Saturday to Sunday, with breakfast provided on Sunday morning.
