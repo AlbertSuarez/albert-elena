@@ -43,7 +43,7 @@ const RSVP: React.FC = () => {
     return phoneRegex.test(phone);
   };
 
-  const showNotification = (message: string, type: 'success' | 'error') => {
+  const showNotification = (message: string) => {
     // Simple notification - in a real app, you'd use a proper notification library
     alert(message);
   };
@@ -53,17 +53,17 @@ const RSVP: React.FC = () => {
     
     // Validation
     if (!formData.name || !formData.email || !formData.phone) {
-      showNotification('Si us plau, ompliu tots els camps obligatoris.', 'error');
+      showNotification('Si us plau, ompliu tots els camps obligatoris.');
       return;
     }
 
     if (!validateEmail(formData.email)) {
-      showNotification('Si us plau, introduïu un correu electrònic vàlid (exemple@correu.com)', 'error');
+      showNotification('Si us plau, introduïu un correu electrònic vàlid (exemple@correu.com)');
       return;
     }
 
     if (!validatePhone(formData.phone)) {
-      showNotification('Si us plau, introduïu un número de telèfon vàlid (mínim 9 dígits)', 'error');
+      showNotification('Si us plau, introduïu un número de telèfon vàlid (mínim 9 dígits)');
       return;
     }
 
@@ -79,7 +79,7 @@ const RSVP: React.FC = () => {
       });
 
       if (response.ok) {
-        showNotification('Gràcies per la vostra confirmació!', 'success');
+        showNotification('Gràcies per la vostra confirmació!');
         setFormData({
           name: '',
           email: '',
@@ -96,8 +96,8 @@ const RSVP: React.FC = () => {
       } else {
         throw new Error('Error submitting form');
       }
-    } catch (error) {
-      showNotification('Hi ha hagut un error. Si us plau, intenteu-ho de nou.', 'error');
+    } catch {
+      showNotification('Hi ha hagut un error. Si us plau, intenteu-ho de nou.');
     } finally {
       setIsSubmitting(false);
     }
