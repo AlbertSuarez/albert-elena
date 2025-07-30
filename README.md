@@ -11,7 +11,7 @@
 💍 Wedding website for Albert & Elena
 
 > [!NOTE]
-> **🔗 Live Demo:** [asuarez.dev/albert-elena](https://asuarez.dev/albert-elena)
+> **🔗 Live Demo:** [albertelena.wedding](https://albertelena.wedding)
 
 ## Summary
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   robots: 'noindex, nofollow, noarchive, nosnippet, noimageindex',
   openGraph: {
     type: 'website',
-    url: 'https://asuarez.dev/albert-elena/',
+    url: 'https://albertelena.wedding/',
     title: 'Albert & Elena - Casament 11.04.26',
     description: 'Ens casem l\'11 d\'abril de 2026 a Mas Muxach, Brunyola. Descobreix tots els detalls de la nostra celebració.',
     images: [

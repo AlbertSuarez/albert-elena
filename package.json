@@ -1,7 +1,7 @@
 {
   "name": "nextjs-app",
   "version": "0.1.0",
-  "homepage": "https://asuarez.dev/albert-elena",
+  "homepage": "https://albertelena.wedding",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
