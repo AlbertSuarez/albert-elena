@@ -1,0 +1,75 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2C3E2C;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #8FBC8F, #98C9A3);
+  border-radius: 2px;
+}
+
+.contactSection {
+  padding: 4rem 0;
+  background: #F5E6D3;
+}
+
+.contactContent {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contactContent p {
+  font-size: 1.2rem;
+  color: #5A6B5A;
+  margin-bottom: 2rem;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactItem {
+  background: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  color: #2C3E2C;
+}
+
+.contactItem a {
+  color: #8FBC8F;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contactItem a:hover {
+  color: #7A9F7A;
+}
+
+@media (max-width: 768px) {
+  .contactInfo {
+    gap: 1rem;
+  }
+} 

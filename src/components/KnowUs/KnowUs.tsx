@@ -1,0 +1,32 @@
+import React from 'react';
+import styles from './KnowUs.module.css';
+import { Title } from '../Title/Title';
+
+const KnowUs: React.FC = () => {
+  return (
+    <section id="coneixe-ns-mes" className={styles.knowUsSection}>
+      <div className={styles.container}>
+        <Title>CONEIXE&apos;NS MÉS</Title>
+        <div className={styles.knowUsContent}>
+          <p className={styles.knowUsIntro}>
+            Descobreix la nostra música de quan ens vam conèixer i les cançons que ens acompanyavem per tot el camí.
+          </p>
+          <div className={styles.spotifyEmbed}>
+            <iframe 
+              style={{borderRadius: '12px'}} 
+              src="https://open.spotify.com/embed/playlist/1MRrEWey6OXX5RCohZXLTH?utm_source=generator&theme=0" 
+              width="100%" 
+              height="352" 
+              frameBorder="0" 
+              allowFullScreen={true}
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default KnowUs; 

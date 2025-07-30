@@ -1,0 +1,38 @@
+
+
+.container {
+  display: flex;
+}
+
+.container.right {
+  flex-direction: row-reverse;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+}
+
+
+.left > .title {
+  margin-left: 2rem;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  text-align: start;
+  color: var(--grey);
+  font-weight: 300;
+  position: relative;
+  letter-spacing: 4px;
+}
+
+.left > .title {
+  margin-left: 2rem;
+}
+
+.right > .title {
+  margin-right: 2rem;
+}

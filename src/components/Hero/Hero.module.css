@@ -1,0 +1,330 @@
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
+/* Main Hero Container */
+.hero {
+  background-color: var(--background);
+}
+
+/* Hero Content Layout */
+.heroContent {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    justify-content: space-between;
+    padding-bottom: 3rem;
+    padding-top: 4rem;
+  }
+}
+
+/* ==========================================================================
+   LAYOUT CONTAINERS
+   ========================================================================== */
+
+/* Title Container */
+.titleContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 12rem;
+}
+
+/* Background Transition */
+
+.backgroundTransition {
+  height: 100%;
+  display: flex;
+  position: absolute;
+}
+
+.backgroundTransitionBorder {
+  display: none;
+}
+
+.backgroundTransitionImg {
+  align-self: end;
+}
+
+@media (max-width: 480px) {
+  .backgroundTransitionImg {
+    object-fit: cover;
+    object-position: 70% 80%;
+    height: 350px;
+    width: auto;
+  }
+
+  .backgroundTransitionBorder {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+  }
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+/* Main Title (Couple Names) */
+.title {
+  font-family: 'Le Petit Cochon', 'Amatic SC', 'Fredoka One', cursive;
+  font-size: 4rem;
+  font-weight: 400;
+  color: var(--primary);
+  margin-top: 2rem;
+  letter-spacing: 3px;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  -webkit-text-stroke: 1px var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================================================
+   COUPLE PHOTO
+   ========================================================================== */
+
+.couplePhoto {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.couplePhoto > .movil {
+  display: none;
+}
+
+.couplePhoto > .ordinador {
+  display: block;
+  max-width: 70%;
+}
+
+.coupleImg {
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.coupleImg:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 1024px) {
+  .couplePhoto > .ordinador {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .couplePhoto > .movil {
+    display: block;
+    width: 100%;
+    margin-bottom: 125px;
+  }
+  
+  .couplePhoto > .ordinador {
+    display: none;
+  }
+}
+
+
+
+/* ==========================================================================
+   WEDDING DETAILS SECTION
+   ========================================================================== */
+
+.weddingDetailsContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.weddingDetails {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.weddingDetailsSvg {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+}
+
+
+.weddingDetailsContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  color: var(--primary);
+  text-align: center;
+  z-index: 10;
+  font-family: 'Le Petit Cochon', 'Poppins', sans-serif;
+  letter-spacing: 2px;
+}
+
+/* Wedding Details Typography */
+.weddingTitle {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+.weddingDate {
+  color: var(--white);
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.weddingLocation {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+@media (max-width: 1024px) {
+  .weddingDetailsSvg {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .weddingTitle {
+    font-size: 2rem;
+  }
+  
+  .weddingDate {
+    font-size: 2.5rem;
+  }
+  
+  .weddingLocation {
+    font-size: 1rem;
+  }
+  
+  .weddingDetailsSvg {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .weddingDetailsContainer {
+    justify-content: center;
+  }
+
+  .weddingDetails {
+    margin-right: 0;
+  }
+
+  .weddingDetailsContent {
+    position: relative;
+    transform: none;
+    top: 0;
+    left: 0;
+  }
+
+  /* .weddingTitle {
+    font-size: 1.8rem;
+  }
+  
+  .weddingDate {
+    font-size: 2rem;
+  }
+  
+  .weddingLocation {
+    font-size: 0.9rem;
+  } */
+  
+  .weddingDetailsSvg {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   RING ANIMATION
+   ========================================================================== */
+
+.rings {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.rings::before,
+.rings::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 8px solid var(--primary);
+  border-radius: 50%;
+  top: 0;
+}
+
+.rings::before {
+  left: 0;
+  z-index: 1;
+}
+
+.rings::after {
+  right: 0;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+
+  .titleContainer {
+    margin-right: 8rem;
+  }
+  
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .titleContainer {
+    margin-right: 4rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .titleContainer  {
+    margin: 0 auto;
+  }
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .rings {
+    width: 60px;
+    height: 30px;
+  }
+  
+  .rings::before,
+  .rings::after {
+    width: 30px;
+    height: 30px;
+    border-width: 6px;
+  }
+}

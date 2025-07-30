@@ -1,0 +1,30 @@
+.invitation {
+  background-color: var(--primary-light);
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  gap: 2rem;
+}
+
+@media (max-width: 480px) {
+  .invitation {
+    min-height: 50vh;
+  }
+}
+
+.invitationContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
+  min-width: 300px;
+}
+
+.invitationContent p {
+  font-size: 22px;
+  line-height: 150%;
+}
