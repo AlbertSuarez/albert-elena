@@ -71,7 +71,7 @@ const RSVP: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://formspree.io/f/xdkzrryn', {
+      const response = await fetch('https://formspree.io/f/xeokybvp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
