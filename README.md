@@ -15,6 +15,57 @@
 > [!NOTE]
 > **🔗 Live Demo:** [albertelena.wedding](https://albertelena.wedding)
 
+## How to Run
+
+### Prerequisites
+
+- Node.js 20.13.1 or higher
+- npm 10.5.2 or higher
+
+### Installation and Development
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/AlbertSuarez/albert-elena.git
+   cd albert-elena
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser and navigate to:**
+
+   ```text
+   http://localhost:3000
+   ```
+
+### Build and Deploy
+
+1. **Build the application:**
+
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy to GitHub Pages:**
+
+   ```bash
+   npm run deploy
+   ```
+
+> [!TIP]
+> The deployment process automatically builds the application before deploying via the `predeploy` script.
+
 ## Summary
 
 This is a simple, static, and responsive wedding website celebrating the marriage of Albert and Elena on **April 11th, 2026**. The wedding will take place at [Mas Muxach](https://maps.app.goo.gl/V6TaM6MgLW6GKd8U9), and guests are invited to stay overnight from Saturday to Sunday, with breakfast provided on Sunday morning.
@@ -29,13 +80,6 @@ This is a simple, static, and responsive wedding website celebrating the marriag
 - **Accommodation:** Overnight stay available (Saturday to Sunday)
 - **Breakfast:** Sunday morning for overnight guests
 
-#### Celebration Program
-
-1. **Ceremony (12:30 PM):** Short wedding ceremony with family and friends
-2. **Reception:** Mixed format with standing finger food and seated lunch
-3. **Menu:** Full vegetarian menu featuring two courses and dessert
-4. **Evening:** Open bar with DJ music and dancing
-
 #### Special Notes
 
 - **Dietary:** The entire celebration will be fully vegetarian
@@ -48,11 +92,9 @@ The wedding website includes the following sections:
 
 - **Event Information:** Date, time, and location details
 - **Venue Details:** Information about Mas Muxach and accommodation
-- **Schedule:** Timeline of the day's events
 - **FAQ Section:** Answers to common guest questions
 - **RSVP Form:** Guest attendance confirmation and information collection
-- **Dietary Requirements:** Information about the vegetarian menu
-- **Contact Information:** How to reach the couple for questions
+- **Spotify Playlist:** Shared playlist from the main characters
 
 > [!IMPORTANT]  
 > The website content is fully in Catalan to accommodate the local guests and venue.
