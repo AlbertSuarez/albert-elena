@@ -1,6 +1,8 @@
 # Albert&Elena
 
-[![pages-build-deployment](https://github.com/AlbertSuarez/albert-elena/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AlbertSuarez/albert-elena/actions/workflows/pages/pages-build-deployment)
+[![Pages Build Deployment](https://github.com/AlbertSuarez/albert-elena/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AlbertSuarez/albert-elena/actions/workflows/pages/pages-build-deployment)
+[![Build Validation](https://github.com/AlbertSuarez/albert-elena/actions/workflows/build-validation.yml/badge.svg)](https://github.com/AlbertSuarez/albert-elena/actions/workflows/build-validation.yml)
+[![Deploy to GitHub Pages](https://github.com/AlbertSuarez/albert-elena/actions/workflows/deploy.yml/badge.svg)](https://github.com/AlbertSuarez/albert-elena/actions/workflows/deploy.yml)
 
 [![GitHub stars](https://img.shields.io/github/stars/AlbertSuarez/albert-elena.svg)](https://gitHub.com/AlbertSuarez/albert-elena/stargazers/)
 [![GitHub forks](https://img.shields.io/github/forks/AlbertSuarez/albert-elena.svg)](https://gitHub.com/AlbertSuarez/albert-elena/network/)
