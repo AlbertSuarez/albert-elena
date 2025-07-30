@@ -2,14 +2,13 @@
 import React from 'react';
 import styles from './Ceremony.module.css';
 import Button from '../Button/Button';
+import { Title } from '../Title/Title';
 
 const Ceremony: React.FC = () => {
   return (
-    <section id="cerimonia" className={styles.ceremonySection}>
+    <section id="cerimonia" className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>Cerimònia</h2>
-        </div>
+        <Title direction='left'>CERIMÒNIA</Title>
         <div className={styles.ceremonyContent}>
           <div className={styles.venueImage}>
             <img src="/assets/images/mas-muxach.jpg" alt="Mas Muxach" className={styles.venueImg} />

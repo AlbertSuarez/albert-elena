@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from './RSVP.module.css';
+import { Title } from '../Title/Title';
 
 interface FormData {
   name: string;
@@ -106,7 +107,7 @@ const RSVP: React.FC = () => {
   return (
     <section id="confirmacio" className={styles.rsvpSection}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Confirmació d&apos;assistència</h2>
+        <Title>CONFIRMACIÓ D&apos;ASSISTÈNCIA</Title>
         <div className={styles.rsvpContent}>
           <p className={styles.rsvpIntro}>
             Si us plau, confirmeu la vostra assistència abans del <strong>1 d&apos;octubre de 2025</strong>.

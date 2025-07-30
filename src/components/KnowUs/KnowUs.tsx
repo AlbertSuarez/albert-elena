@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './KnowUs.module.css';
+import { Title } from '../Title/Title';
 
 const KnowUs: React.FC = () => {
   return (
     <section id="coneixe-ns-mes" className={styles.knowUsSection}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Coneixe&apos;ns més</h2>
+        <Title>CONEIXE&apos;NS MÉS</Title>
         <div className={styles.knowUsContent}>
           <p className={styles.knowUsIntro}>
             Descobreix la nostra música de quan ens vam conèixer i les cançons que ens acompanyavem per tot el camí.

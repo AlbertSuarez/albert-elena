@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './Accommodation.module.css';
+import { Title } from '../Title/Title';
 
 const Accommodation: React.FC = () => {
   return (
     <section id="allotjament" className={styles.accommodationSection}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Allotjament</h2>
+        <Title direction='right'>ALLOTJAMENT</Title>
         <div className={styles.accommodationContent}>
           <div className={styles.accommodationInfo}>
             <h3>Quedeu-vos a dormir!</h3>

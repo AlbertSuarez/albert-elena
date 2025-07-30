@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from './FAQ.module.css';
+import { Title } from '../Title/Title';
 
 interface FAQItem {
   question: string;
@@ -41,7 +42,7 @@ const FAQ: React.FC = () => {
   return (
     <section id="preguntes" className={styles.faqSection}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Preguntes freqüents</h2>
+        <Title>PREGUNTES FREQÜENTS</Title>
         <div className={styles.faqList}>
           {faqData.map((item, index) => (
             <div key={index} className={`${styles.faqItem} ${activeIndex === index ? styles.active : ''}`}>

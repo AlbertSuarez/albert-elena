@@ -25,6 +25,8 @@
   --shadow: rgba(0, 0, 0, 0.1);
   --border-radius: 15px;
   --transition: all 0.3s ease;
+
+  --font-primary: 'Le Petit Cochon', cursive;
   
   /* Legacy variables for backward compatibility */
   --primary-color: #A2BBA0;

@@ -10,6 +10,12 @@
   gap: 2rem;
 }
 
+@media (max-width: 480px) {
+  .invitation {
+    min-height: 50vh;
+  }
+}
+
 .invitationContent {
   display: flex;
   flex-direction: column;

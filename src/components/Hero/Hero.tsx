@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Hero.module.css';
+import cx from 'classnames';
 
 const Hero: React.FC = () => {
   return (
@@ -7,8 +8,13 @@ const Hero: React.FC = () => {
         <div className={styles.couplePhoto}>
           <img 
             src="/assets/images/albert-elena-ordinador.png" 
-            alt="Albert i Elena" 
-            className={`${styles.coupleImg} transition-smooth hover-scale`} 
+            alt="Albert i Elena"
+            className={cx(styles.coupleImg, 'transition-smooth', 'hover-scale', styles.ordinador)}
+          />
+          <img 
+            src="/assets/images/albert-elena-mobil.png" 
+            alt="Albert i Elena"
+            className={cx(styles.coupleImg, 'transition-smooth', 'hover-scale', styles.movil)}
           />
         </div>
         
@@ -16,8 +22,9 @@ const Hero: React.FC = () => {
           <img 
             src="/assets/images/figures/transició.png" 
             alt="Background transition"
-            className="full-width"
+            className={styles.backgroundTransitionImg}
           />
+          <div className={styles.backgroundTransitionBorder}/>
         </div>
         
       <div className={`full-height full-width ${styles.heroContent}`}>
@@ -28,7 +35,7 @@ const Hero: React.FC = () => {
           </h1>
         </div>
         
-        <div className="flex-end full-width">
+        <div className={cx(styles.weddingDetailsContainer, 'full-width')}>
           <div className={`${styles.weddingDetails} fade-in-up`}>
               <svg 
                 className={styles.weddingDetailsSvg}
