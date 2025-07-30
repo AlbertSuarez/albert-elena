@@ -27,6 +27,7 @@
   --transition: all 0.3s ease;
 
   --font-primary: 'Le Petit Cochon', cursive;
+  --font-secondary: 'Poppins', sans-serif;
   
   /* Legacy variables for backward compatibility */
   --primary-color: #A2BBA0;

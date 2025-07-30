@@ -42,7 +42,7 @@ const FAQ: React.FC = () => {
   return (
     <section id="preguntes" className={styles.faqSection}>
       <div className={styles.container}>
-        <Title>PREGUNTES FREQÜENTS</Title>
+        <Title condensed>PREGUNTES FREQÜENTS</Title>
         <div className={styles.faqList}>
           {faqData.map((item, index) => (
             <div key={index} className={`${styles.faqItem} ${activeIndex === index ? styles.active : ''}`}>

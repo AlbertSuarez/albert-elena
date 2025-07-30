@@ -23,10 +23,10 @@
   font-family: var(--font-primary);
   font-size: 3rem;
   text-align: start;
-  color: var(--grey);
   font-weight: 300;
   position: relative;
   letter-spacing: 4px;
+  color: var(--primary);
 }
 
 .left > .title {
@@ -35,4 +35,8 @@
 
 .right > .title {
   margin-right: 2rem;
+}
+
+.condensed {
+  line-height: 1;
 }
