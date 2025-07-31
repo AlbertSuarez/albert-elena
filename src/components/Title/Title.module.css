@@ -29,6 +29,12 @@
   color: var(--primary);
 }
 
+@media (max-width: 375px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
 .left > .title {
   margin-left: 2rem;
 }

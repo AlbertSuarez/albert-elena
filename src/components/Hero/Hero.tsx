@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
           <div className={styles.backgroundTransitionBorder}/>
         </div>
         
-      <div className={`full-height full-width ${styles.heroContent}`}>
+      <div className={`full-width ${styles.heroContent}`}>
         <div className={styles.titleContainer}>
           <h1 className={`${styles.title} fade-in-up`}>
             ALBERT + <br />
