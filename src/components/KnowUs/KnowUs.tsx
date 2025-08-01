@@ -14,7 +14,7 @@ const KnowUs: React.FC = () => {
           <div className={styles.spotifyEmbed}>
             <iframe 
               style={{borderRadius: '12px'}} 
-              src="https://open.spotify.com/embed/playlist/1MRrEWey6OXX5RCohZXLTH?utm_source=generator&theme=0" 
+              src="https://open.spotify.com/embed/playlist/4esJT76klkPxtDXnTkBa3r?utm_source=generator" 
               width="100%" 
               height="352" 
               frameBorder="0" 

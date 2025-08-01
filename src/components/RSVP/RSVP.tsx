@@ -3,10 +3,11 @@
 import React, { useState } from 'react';
 import styles from './RSVP.module.css';
 import { Title } from '../Title/Title';
+import { Input } from '../Input/Input';
+import Button from '../Button/Button';
 
 interface FormData {
   name: string;
-  email: string;
   phone: string;
   children: string;
   accommodation: string;
@@ -17,7 +18,6 @@ interface FormData {
 const RSVP: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
-    email: '',
     phone: '',
     children: '0',
     accommodation: 'yes',
@@ -34,11 +34,6 @@ const RSVP: React.FC = () => {
     }));
   };
 
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return emailRegex.test(email);
-  };
-
   const validatePhone = (phone: string) => {
     const phoneRegex = /^[0-9\s\+\-\(\)]{9,}$/;
     return phoneRegex.test(phone);
@@ -53,13 +48,8 @@ const RSVP: React.FC = () => {
     e.preventDefault();
     
     // Validation
-    if (!formData.name || !formData.email || !formData.phone) {
+    if (!formData.name || !formData.phone) {
       showNotification('Si us plau, ompliu tots els camps obligatoris.');
-      return;
-    }
-
-    if (!validateEmail(formData.email)) {
-      showNotification('Si us plau, introduïu un correu electrònic vàlid (exemple@correu.com)');
       return;
     }
 
@@ -83,7 +73,6 @@ const RSVP: React.FC = () => {
         showNotification('Gràcies per la vostra confirmació!');
         setFormData({
           name: '',
-          email: '',
           phone: '',
           children: '0',
           accommodation: 'yes',
@@ -107,109 +96,79 @@ const RSVP: React.FC = () => {
   return (
     <section id="confirmacio" className={styles.rsvpSection}>
       <div className={styles.container}>
-        <Title>CONFIRMACIÓ D&apos;ASSISTÈNCIA</Title>
+        <Title condensed>CONFIRMACIÓ D&apos;ASSISTÈNCIA</Title>
         <div className={styles.rsvpContent}>
           <p className={styles.rsvpIntro}>
             Si us plau, confirmeu la vostra assistència abans del <strong>1 d&apos;octubre de 2025</strong>.
           </p>
           
           <form className={styles.rsvpForm} onSubmit={handleSubmit}>
-            <div className={styles.formGroup}>
-              <label htmlFor="name">Nom complet *</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="Joan Pere"
-              />
-            </div>
+            <Input
+              type="text"
+              label="Nom complet *"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Joan Pere"
+              required
+            />
+            <Input
+              type="tel"
+              name="phone"
+              label="Telèfon *"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Exemple: 666555444"
+              required
+            />
+
+            <Input
+              type="select"
+              name="children"
+              label="Nombre de nens"
+              value={formData.children}
+              onChange={handleChange}
+              options={[
+                { label: 'Cap nen', value: '0' },
+                { label: '1 nen', value: '1' },
+                { label: '2 nens', value: '2' },
+                { label: '3 nens', value: '3' },
+              ]}
+            />
+
+            <Input
+              type="select"
+              name="accommodation"
+              label="Allotjament"
+              value={formData.accommodation}
+              onChange={handleChange}
+              options={[
+                { label: 'No em quedaré a dormir', value: 'no' },
+                { label: 'Sí, em quedaré a dormir', value: 'yes' },
+              ]}
+            />
+
+            <Input
+              type="textarea"
+              name="dietary"
+              label="Requisits dietètics o al·lèrgies"
+              value={formData.dietary}
+              onChange={handleChange}
+              placeholder="Indiqueu qualsevol al·lèrgia o requisit dietètic especial..."
+            />
+
+            <Input
+              type="textarea"
+              name="message"
+              label="Missatge per als nuvis"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Escriviu-nos un missatge..."
+            />
             
-            <div className={styles.formGroup}>
-              <label htmlFor="email">Correu electrònic *</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder="exemple@correu.com"
-              />
-            </div>
-            
-            <div className={styles.formGroup}>
-              <label htmlFor="phone">Telèfon *</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                placeholder="Exemple: 666555444"
-              />
-            </div>
-            
-            <div className={styles.formGroup}>
-              <label htmlFor="children">Nombre de nens</label>
-              <select
-                id="children"
-                name="children"
-                value={formData.children}
-                onChange={handleChange}
-              >
-                <option value="0">Cap nen</option>
-                <option value="1">1 nen</option>
-                <option value="2">2 nens</option>
-                <option value="3">3 nens</option>
-                <option value="4">4 nens</option>
-                <option value="5">5+ nens</option>
-              </select>
-            </div>
-            
-            <div className={styles.formGroup}>
-              <label htmlFor="accommodation">Allotjament</label>
-              <select
-                id="accommodation"
-                name="accommodation"
-                value={formData.accommodation}
-                onChange={handleChange}
-              >
-                <option value="no">No em quedaré a dormir</option>
-                <option value="yes">Sí, em quedaré a dormir</option>
-              </select>
-            </div>
-            
-            <div className={styles.formGroup}>
-              <label htmlFor="dietary">Requisits dietètics o al·lèrgies</label>
-              <textarea
-                id="dietary"
-                name="dietary"
-                value={formData.dietary}
-                onChange={handleChange}
-                rows={3}
-                placeholder="Indiqueu qualsevol al·lèrgia o requisit dietètic especial..."
-              />
-            </div>
-            
-            <div className={styles.formGroup}>
-              <label htmlFor="message">Missatge per als nuvis</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={4}
-                placeholder="Escriviu-nos un missatge..."
-              />
-            </div>
-            
-            <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+            <Button type="submit" disabled={isSubmitting} onClick={() => {}}>
               {isSubmitting ? 'Enviant...' : 'Confirmar assistència'}
-            </button>
+            </Button>
           </form>
         </div>
       </div>
