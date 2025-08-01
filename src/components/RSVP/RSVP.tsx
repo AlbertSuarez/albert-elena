@@ -54,7 +54,7 @@ const RSVP: React.FC = () => {
     }
 
     if (!validatePhone(formData.phone)) {
-      showNotification('Si us plau, introduïu un número de telèfon vàlid (mínim 9 dígits)');
+      showNotification('Si us plau, introduïu un nombre de telèfon vàlid (mínim 9 dígits)');
       return;
     }
 

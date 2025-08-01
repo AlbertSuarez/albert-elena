@@ -18,8 +18,8 @@ export default function Invitation() {
     <section id="invitation" className={styles.invitation}>
       <div className={styles.invitationContent}>
         <p>Hola NOM!</p>
-        <p>si has rebut aquest enllaç és perquè estàs invitat a la nostra boda.</p>
-        <p>Aquí hi trobaras tota la informació i <strong>un formulari per confirmar l’asistencia.</strong></p>
+        <p>si has rebut aquest enllaç és perquè estàs convidat al nostre casament.</p>
+        <p>Aquí hi trobaràs tota la informació i <strong>un formulari per confirmar l’assistència.</strong></p>
       </div>
       <div className={styles.invitationButton}>
         <Button onClick={scrollToForm}>Ves al formulari</Button>
