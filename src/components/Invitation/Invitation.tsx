@@ -1,19 +1,50 @@
 'use client';
 
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import Button from '../Button/Button';
 import styles from './Invitation.module.css';
 
-export default function Invitation() {
+function InvitationContent() {
+  const guestName = useSearchParams().get('id');
+  const getGreeting = () => {
+    if (guestName && guestName.trim()) {
+      return (
+        <>
+          Hola, <strong>{guestName}</strong>!
+        </>
+      );
+    }
+    return 'Hola!';
+  };
+  const scrollToForm = () => {
+    const formSection = document.getElementById('confirmacio');
+    if (formSection) {
+      formSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section id="invitation" className={styles.invitation}>
       <div className={styles.invitationContent}>
-        <p>Hola NOM!</p>
-        <p>si has rebut aquest enllaç és perquè estàs invitat a la nostra boda.</p>
-        <p>Aquí hi trobaras tota la informació i <strong>un formulari per confirmar l’asistencia.</strong></p>
+        <p>{getGreeting()}</p>
+        <p>Si estàs llegint això… enhorabona! Estàs oficialment convidat al nostre casament 🎉</p>
+        <p>Aquí trobaràs tota la informació important i un <strong>formulari per confirmar</strong> que vindràs a celebrar-ho amb nosaltres.</p>
       </div>
       <div className={styles.invitationButton}>
-        <Button onClick={() => { console.log('clicked') }}>Ves al formulari</Button>
+        <Button onClick={scrollToForm}>Ves al formulari</Button>
       </div>
     </section>
+  );
+}
+
+export default function Invitation() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <InvitationContent />
+    </Suspense>
   );
 }

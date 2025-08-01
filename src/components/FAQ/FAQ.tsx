@@ -31,7 +31,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Fins a quina hora és la festa?",
-      answer: "La festa continuarà fins tard! Per als que es quedin a dormir, podran continuar celebrant sense preocupacions."
+      answer: "La festa continuarà fins tard! Per als qui es quedin a dormir, podran continuar celebrant sense preocupacions."
     }
   ];
 

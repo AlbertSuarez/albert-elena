@@ -25,12 +25,14 @@ const RSVP: React.FC = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [notificationModal, setNotificationModal] = useState<{ show: boolean; message: string; type: 'error' | 'success' }>({ show: false, message: '', type: 'error' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value.trim()
+      [name]: value
     }));
   };
 
@@ -39,22 +41,25 @@ const RSVP: React.FC = () => {
     return phoneRegex.test(phone);
   };
 
-  const showNotification = (message: string) => {
-    // Simple notification - in a real app, you'd use a proper notification library
-    alert(message);
+  const showNotification = (message: string, type: 'error' | 'success' = 'error') => {
+    setNotificationModal({ show: true, message, type });
+    
+    setTimeout(() => {
+      setNotificationModal({ show: false, message: '', type: 'error' });
+    }, 4000);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validation
-    if (!formData.name || !formData.phone) {
+    if (!formData.name.trim() || !formData.phone.trim()) {
       showNotification('Si us plau, ompliu tots els camps obligatoris.');
       return;
     }
 
     if (!validatePhone(formData.phone)) {
-      showNotification('Si us plau, introduïu un número de telèfon vàlid (mínim 9 dígits)');
+      showNotification('Si us plau, introduïu un nombre de telèfon vàlid (mínim 9 dígits)');
       return;
     }
 
@@ -70,7 +75,6 @@ const RSVP: React.FC = () => {
       });
 
       if (response.ok) {
-        showNotification('Gràcies per la vostra confirmació!');
         setFormData({
           name: '',
           phone: '',
@@ -79,15 +83,16 @@ const RSVP: React.FC = () => {
           dietary: '',
           message: ''
         });
+        setShowSuccessModal(true);
         
         setTimeout(() => {
-          window.location.href = '/thank-you.html';
-        }, 1500);
+          setShowSuccessModal(false);
+        }, 3000);
       } else {
         throw new Error('Error submitting form');
       }
     } catch {
-      showNotification('Hi ha hagut un error. Si us plau, intenteu-ho de nou.');
+      showNotification('Hi ha hagut un error. Si us plau, intenteu-ho de nou.', 'error');
     } finally {
       setIsSubmitting(false);
     }
@@ -172,6 +177,22 @@ const RSVP: React.FC = () => {
           </form>
         </div>
       </div>
+      
+      {showSuccessModal && (
+        <div className={styles.modal}>
+          <div className={styles.modalContent}>
+            <h3>ENVIAT!</h3>
+          </div>
+        </div>
+      )}
+      
+      {notificationModal.show && (
+        <div className={styles.modal}>
+          <div className={`${styles.modalContent} ${styles[notificationModal.type]}`}>
+            <p>{notificationModal.message}</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

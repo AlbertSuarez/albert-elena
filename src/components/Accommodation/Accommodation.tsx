@@ -9,15 +9,14 @@ const Accommodation: React.FC = () => {
         <Title direction='right'>ALLOTJAMENT</Title>
         <div className={styles.accommodationContent}>
           <div className={styles.accommodationInfo}>
-            <h3>Quedeu-vos a dormir!</h3>
-            <p>Mas Muxach ofereix la possibilitat de quedar-se a dormir al mateix lloc de la celebració.</p>
+            <h3>Queda’t a dormir!</h3>
+            <p>Ens encantaria despertar-nos envoltats de cares conegudes i compartir el primer cafè del dia amb vosaltres. Si tens marge, queda’t a dormir! És la manera més fàcil (i <i>divertida</i>) de tancar la festa.</p>
             <ul>
-              <li>✨ Allotjament del dissabte al diumenge</li>
-              <li>🍳 Esmorzar inclòs el diumenge al matí</li>
-              <li>🏡 Ambient rural i tranquil</li>
-              <li>🚗 Aparcament disponible</li>
+              <li>📍 La masia inclou habitacions per quedar-s’hi</li>
+              <li>🍳 Amb un bon esmorzar a l’endemà</li>
+              <li>💃 Podem allargar la festa sense presses ni complicacions</li>
             </ul>
-            <p><strong>Important:</strong> Confirmeu si us quedareu a dormir en el formulari de confirmació.</p>
+            <p>👉 Avisa’ns al <strong>formulari</strong> si et vols quedar!</p>
           </div>
         </div>
       </div>
