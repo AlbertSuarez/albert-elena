@@ -6,13 +6,13 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className={styles.hero}>
         <div className={styles.couplePhoto}>
-          <img 
+        <img 
             src="/assets/images/albert-elena-ordinador.png" 
             alt="Albert i Elena"
             className={cx(styles.coupleImg, 'transition-smooth', 'hover-scale', styles.ordinador)}
           />
           <img 
-            src="/assets/images/albert-elena-mobil.png" 
+            src="/assets/images/albert-elena-movil.png" 
             alt="Albert i Elena"
             className={cx(styles.coupleImg, 'transition-smooth', 'hover-scale', styles.movil)}
           />
