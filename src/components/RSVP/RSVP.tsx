@@ -181,7 +181,7 @@ const RSVP: React.FC = () => {
       {showSuccessModal && (
         <div className={styles.modal}>
           <div className={styles.modalContent}>
-            <h3>Enviat!</h3>
+            <h3>ENVIAT!</h3>
           </div>
         </div>
       )}
