@@ -8,7 +8,11 @@ export default function Invitation() {
   const guestName = useSearchParams().get('id');
   const getGreeting = () => {
     if (guestName && guestName.trim()) {
-      return `Hola, ${guestName}!`;
+      return (
+        <>
+          Hola, <strong>{guestName}</strong>!
+        </>
+      );
     }
     return 'Hola!';
   };
