@@ -31,7 +31,7 @@ const RSVP: React.FC = () => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value.trim()
+      [name]: value
     }));
   };
 
@@ -49,7 +49,7 @@ const RSVP: React.FC = () => {
     e.preventDefault();
     
     // Validation
-    if (!formData.name || !formData.phone) {
+    if (!formData.name.trim() || !formData.phone.trim()) {
       showNotification('Si us plau, ompliu tots els camps obligatoris.');
       return;
     }
