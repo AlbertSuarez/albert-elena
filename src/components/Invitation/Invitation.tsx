@@ -1,10 +1,11 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import Button from '../Button/Button';
 import styles from './Invitation.module.css';
 
-export default function Invitation() {
+function InvitationContent() {
   const guestName = useSearchParams().get('id');
   const getGreeting = () => {
     if (guestName && guestName.trim()) {
@@ -37,5 +38,13 @@ export default function Invitation() {
         <Button onClick={scrollToForm}>Ves al formulari</Button>
       </div>
     </section>
+  );
+}
+
+export default function Invitation() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <InvitationContent />
+    </Suspense>
   );
 }
