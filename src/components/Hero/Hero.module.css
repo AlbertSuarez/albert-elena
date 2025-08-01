@@ -5,8 +5,29 @@
 /* Main Hero Container */
 .hero {
   background-color: var(--background);
-  height: 100dvh;
-  min-height: 100%;
+  position: relative;
+  
+  /* Mobile-first approach - start with smaller height to avoid overflow */
+  min-height: calc(100vh - 120px);
+  
+  /* Progressive enhancement for larger screens */
+  height: 100vh;
+}
+
+/* Large mobile devices */
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 80px);
+    height: calc(100vh - 40px);
+  }
+}
+
+/* Small mobile devices - most conservative */
+@media (max-width: 480px) {
+  .hero {
+    min-height: calc(100vh - 120px);
+    height: calc(100vh - 60px);
+  }
 }
 
 /* Hero Content Layout */
@@ -18,7 +39,7 @@
   height: 100%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .heroContent {
     justify-content: space-between;
     padding-bottom: 3rem;
@@ -51,9 +72,10 @@
 
 .backgroundTransitionImg {
   align-self: end;
+  width: 100vw;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .backgroundTransitionImg {
     object-fit: cover;
     object-position: 70% 80%;
@@ -124,7 +146,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .couplePhoto > .movil {
     display: block;
     width: 100%;
@@ -188,7 +210,7 @@
   color: var(--white);
   font-size: 3.5rem;
   font-weight: 900;
-  margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
 .weddingLocation {
@@ -204,25 +226,6 @@
 }
 
 @media (max-width: 768px) {
-  .weddingTitle {
-    font-size: 2rem;
-  }
-  
-  .weddingDate {
-    font-size: 2.5rem;
-  }
-  
-  .weddingLocation {
-    font-size: 1rem;
-  }
-  
-  .weddingDetailsSvg {
-    max-width: 300px;
-  }
-}
-
-@media (max-width: 500px) {
-
   .weddingDetailsContainer {
     justify-content: center;
   }
@@ -237,18 +240,6 @@
     top: 0;
     left: 0;
   }
-
-  /* .weddingTitle {
-    font-size: 1.8rem;
-  }
-  
-  .weddingDate {
-    font-size: 2rem;
-  }
-  
-  .weddingLocation {
-    font-size: 0.9rem;
-  } */
   
   .weddingDetailsSvg {
     display: none;
@@ -311,12 +302,9 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .titleContainer  {
     margin: 0 auto;
-  }
-  .title {
-    font-size: 3.5rem;
   }
 
   .rings {

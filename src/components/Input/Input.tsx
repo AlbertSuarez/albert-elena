@@ -25,7 +25,7 @@ export const Input = (
       switch (type) {
         case 'select':
           return (
-            <select id={name} name={name} value={value} required={required} >
+            <select id={name} name={name} value={value} required={required} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onChange(e)}>
               {options?.map((option) => (
                 <option key={option.value} value={option.value}>{option.label}</option>
               ))}
