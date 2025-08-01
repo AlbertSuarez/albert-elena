@@ -72,6 +72,7 @@
 
 .backgroundTransitionImg {
   align-self: end;
+  width: 100vw;
 }
 
 @media (max-width: 768px) {
@@ -209,7 +210,7 @@
   color: var(--white);
   font-size: 3.5rem;
   font-weight: 900;
-  margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
 .weddingLocation {
