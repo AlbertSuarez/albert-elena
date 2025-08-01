@@ -107,6 +107,30 @@
   letter-spacing: 4px;
 }
 
+.modalContent p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.modalContent.error {
+  border-left: 4px solid #e74c3c;
+}
+
+.modalContent.error p {
+  color: #c0392b;
+}
+
+.modalContent.success {
+  border-left: 4px solid #27ae60;
+}
+
+.modalContent.success p {
+  color: #229954;
+}
+
 @keyframes modalFadeIn {
   from {
     opacity: 0;
@@ -131,5 +155,9 @@
   .modalContent h3 {
     font-size: 2.5rem;
     letter-spacing: 3px;
+  }
+  
+  .modalContent p {
+    font-size: 1.1rem;
   }
 } 
