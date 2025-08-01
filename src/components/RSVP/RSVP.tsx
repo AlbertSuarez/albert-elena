@@ -25,6 +25,7 @@ const RSVP: React.FC = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -70,7 +71,6 @@ const RSVP: React.FC = () => {
       });
 
       if (response.ok) {
-        showNotification('Gràcies per la vostra confirmació!');
         setFormData({
           name: '',
           phone: '',
@@ -79,10 +79,11 @@ const RSVP: React.FC = () => {
           dietary: '',
           message: ''
         });
+        setShowSuccessModal(true);
         
         setTimeout(() => {
-          window.location.href = '/thank-you.html';
-        }, 1500);
+          setShowSuccessModal(false);
+        }, 3000);
       } else {
         throw new Error('Error submitting form');
       }
@@ -172,6 +173,14 @@ const RSVP: React.FC = () => {
           </form>
         </div>
       </div>
+      
+      {showSuccessModal && (
+        <div className={styles.modal}>
+          <div className={styles.modalContent}>
+            <h3>Enviat!</h3>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
