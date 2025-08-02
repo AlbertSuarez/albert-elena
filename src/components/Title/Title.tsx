@@ -1,7 +1,13 @@
 import styles from './Title.module.css';
 import cx from 'classnames';
 
-export const Title = ({ children, direction = 'left', condensed = false }: { children: React.ReactNode, direction?: 'left' | 'right', condensed?: boolean }) => {
+type TitleProps = {
+  children: React.ReactNode;
+  direction?: 'left' | 'right';
+  condensed?: boolean;
+}
+
+export const Title = ({ children, direction = 'left', condensed = false }: TitleProps) => {
   return (
     <div className={cx(styles.container, styles[direction], {
       [styles.condensed]: condensed

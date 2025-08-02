@@ -1,0 +1,28 @@
+.section {
+  padding: 4rem 20px;
+}
+
+.white {
+  background-color: var(--white);
+}
+.primary {
+  background-color: var(--primary);
+}
+
+.secondary {
+  background-color: var(--secondary);
+}
+
+.secondary-light {
+  background-color: var(--secondary-light);
+}
+
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 1.5em;
+}

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import styles from './FAQ.module.css';
 import { Title } from '../Title/Title';
+import { Section } from '../Section/Section';
 
 interface FAQItem {
   question: string;
@@ -40,27 +41,24 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="preguntes" className={styles.faqSection}>
-      <div className={styles.container}>
-        <Title condensed>PREGUNTES FREQÜENTS</Title>
-        <div className={styles.faqList}>
-          {faqData.map((item, index) => (
-            <div key={index} className={`${styles.faqItem} ${activeIndex === index ? styles.active : ''}`}>
-              <button 
-                className={styles.faqQuestion}
-                onClick={() => toggleFAQ(index)}
-              >
-                <span>{item.question}</span>
-                <span className={styles.faqIcon}>+</span>
-              </button>
-              <div className={styles.faqAnswer}>
-                <p>{item.answer}</p>
-              </div>
+    <Section id="preguntes" title="PREGUNTES FREQÜENTS" style="white" titleDirection="left">
+      <div className={styles.faqList}>
+        {faqData.map((item, index) => (
+          <div key={index} className={`${styles.faqItem} ${activeIndex === index ? styles.active : ''}`}>
+            <button 
+              className={styles.faqQuestion}
+              onClick={() => toggleFAQ(index)}
+            >
+              <span>{item.question}</span>
+              <span className={styles.faqIcon}>+</span>
+            </button>
+            <div className={styles.faqAnswer}>
+              <p>{item.answer}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 };
 

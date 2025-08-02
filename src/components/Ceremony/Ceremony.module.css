@@ -1,14 +1,3 @@
-.section {
-  background-color: var(--secondary);
-  padding: 4rem 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 .ceremonyContent {
   display: grid;
   grid-template-columns: 1fr 1fr;

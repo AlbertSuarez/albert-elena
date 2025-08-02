@@ -2,6 +2,7 @@
 
 .container {
   display: flex;
+  align-items: center;
 }
 
 .container.right {
@@ -12,12 +13,15 @@
   width: 60px;
   height: 60px;
   position: absolute;
+  margin-bottom: 12px;
 }
 
-
-.left > .title {
-  margin-left: 2rem;
+@media (max-width: 768px) {
+  .icon {
+    margin-bottom: 0;
+  }
 }
+
 
 .title {
   font-family: var(--font-primary);
@@ -27,12 +31,7 @@
   position: relative;
   letter-spacing: 4px;
   color: var(--primary);
-}
-
-@media (max-width: 375px) {
-  .title {
-    font-size: 2.5rem;
-  }
+  margin: 0;
 }
 
 .left > .title {
@@ -42,6 +41,14 @@
 .right > .title {
   margin-right: 2rem;
 }
+
+
+@media (max-width: 375px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
 
 .condensed {
   line-height: 1;

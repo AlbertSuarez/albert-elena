@@ -2,13 +2,16 @@
 import React from 'react';
 import styles from './Ceremony.module.css';
 import Button from '../Button/Button';
-import { Title } from '../Title/Title';
+import { Section } from '../Section/Section';
 
 const Ceremony: React.FC = () => {
   return (
-    <section id="cerimonia" className={styles.section}>
-      <div className={styles.container}>
-        <Title direction='left'>CERIMÒNIA</Title>
+      <Section
+        id="cerimonia"
+        title="CERIMÒNIA"
+        style="secondary"
+        titleDirection="left"
+      >
         <div className={styles.ceremonyContent}>
           <div className={styles.venueImage}>
             <img src="/assets/images/mas-muxach.jpg" alt="Mas Muxach" className={styles.venueImg} />
@@ -27,8 +30,7 @@ const Ceremony: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+    </Section>
   );
 };
 
