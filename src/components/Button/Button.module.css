@@ -13,3 +13,8 @@
 .button:hover {
   background-color: var(--primary);
 }
+
+.button.disabled {
+  background-color: var(--secondary);
+  cursor: not-allowed;
+}
