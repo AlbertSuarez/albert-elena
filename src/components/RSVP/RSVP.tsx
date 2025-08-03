@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import styles from './RSVP.module.css';
 import { Input } from '../Input/Input';
 import Button from '../Button/Button';
 import { Section } from '../Section/Section';
+import { useSearchParams } from 'next/navigation';
 
 interface FormData {
   name: string;
@@ -15,7 +16,10 @@ interface FormData {
   message: string;
 }
 
-const RSVP: React.FC = () => {
+const RSVPContent: React.FC = () => {
+
+  const isTest = useSearchParams().get('test') === '1';
+  console.log({isTest});
   const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: '',
@@ -25,6 +29,7 @@ const RSVP: React.FC = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSent, setIsSent] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [notificationModal, setNotificationModal] = useState<{ show: boolean; message: string; type: 'error' | 'success' }>({ show: false, message: '', type: 'error' });
 
@@ -65,6 +70,13 @@ const RSVP: React.FC = () => {
 
     setIsSubmitting(true);
 
+    if (isTest) {
+      setShowSuccessModal(true);
+      setIsSubmitting(false);
+      setIsSent(true);
+      return;
+    }
+
     try {
       const response = await fetch('https://formspree.io/f/xeokybvp', {
         method: 'POST',
@@ -84,10 +96,7 @@ const RSVP: React.FC = () => {
           message: ''
         });
         setShowSuccessModal(true);
-        
-        setTimeout(() => {
-          setShowSuccessModal(false);
-        }, 3000);
+        setIsSent(true);
       } else {
         throw new Error('Error submitting form');
       }
@@ -95,8 +104,15 @@ const RSVP: React.FC = () => {
       showNotification('Hi ha hagut un error. Si us plau, intenteu-ho de nou.', 'error');
     } finally {
       setIsSubmitting(false);
+      setIsSent(false);
     }
   };
+
+  const getText = () => {
+    if (isSent) return 'Enviat!';
+    if (isSubmitting) return 'Enviant...';
+    return 'Confirmar assistència';
+  }
 
   return (
     <Section
@@ -175,7 +191,7 @@ const RSVP: React.FC = () => {
           />
           
           <Button type="submit" disabled={isSubmitting} onClick={() => {}}>
-            {isSubmitting ? 'Enviant...' : 'Confirmar assistència'}
+            {getText()}
           </Button>
         </form>
       </div>
@@ -183,7 +199,21 @@ const RSVP: React.FC = () => {
       {showSuccessModal && (
         <div className={styles.modal}>
           <div className={styles.modalContent}>
+            <button 
+              className={styles.closeButton}
+              onClick={() => setShowSuccessModal(false)}
+              aria-label="Tancar modal"
+            >
+              ×
+            </button>
             <h3>ENVIAT!</h3>
+            <div className={styles.modalButtons}>
+              <Button 
+                onClick={() => window.open('https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MmQ2cnBlcGpqcTB1MjBiZHRmdTluM3B1ZHZfMjAyNjA0MTFUMTAzMDAwWiBlbGVuYS5ydWl6LmJkbkBt&tmsrc=elena.ruiz.bdn%40gmail.com', '_blank')}
+              >
+                Afegeix al calendari
+              </Button>
+            </div>
           </div>
         </div>
       )}
@@ -199,4 +229,10 @@ const RSVP: React.FC = () => {
   );
 };
 
-export default RSVP; 
+export default function RSVP() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <RSVPContent />
+    </Suspense>
+  );
+}
