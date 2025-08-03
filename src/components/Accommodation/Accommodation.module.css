@@ -17,14 +17,16 @@
   margin-bottom: 1.5rem;
 }
 
+.accommodationInfo > p {
+  font-size: 1.1rem;
+}
+
 .accommodationInfo > p:first-of-type {
-  font-size: 1.2rem;
   color: #5A6B5A;
   margin-bottom: 2rem;
 }
 
 .accommodationInfo > p:last-of-type {
-  font-size: 1.1rem;
   color: #7A9F7A;
   margin-top: 2rem;
   font-weight: 600;
@@ -48,12 +50,8 @@
     padding: 2rem;
   }
   
-  .accommodationInfo > p:first-of-type {
-    font-size: 1.1rem;
-  }
-  
-  .accommodationInfo > p:last-of-type {
-    font-size: 1rem;
+  .accommodationInfo > p {
+    font-size: 16px;
   }
   
   .accommodationInfo ul {

@@ -13,15 +13,8 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
-
-@media (max-width: 768px) {
-  .icon {
-    margin-bottom: 0;
-  }
-}
-
 
 .title {
   font-family: var(--font-primary);

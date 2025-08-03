@@ -11,6 +11,13 @@
   line-height: 1.6;
 }
 
+@media (max-width: 768px) {
+  .knowUsIntro {
+    font-size: 16px;
+    margin-bottom: 2rem;
+  }
+}
+
 .spotifyEmbed {
   background: #F5E6D3;
   padding: 2rem;
@@ -27,10 +34,5 @@
 @media (max-width: 768px) {
   .spotifyEmbed {
     padding: 1rem;
-  }
-  
-  .knowUsIntro {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
   }
 } 

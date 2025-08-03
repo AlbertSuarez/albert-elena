@@ -28,3 +28,9 @@
   font-size: 20px;
   line-height: 150%;
 }
+
+@media (max-width: 768px) {
+  .invitationContent p {
+    font-size: 16px;
+  }
+}
