@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import styles from './FAQ.module.css';
-import { Title } from '../Title/Title';
 import { Section } from '../Section/Section';
 
 interface FAQItem {

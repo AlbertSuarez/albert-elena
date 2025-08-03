@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import styles from './RSVP.module.css';
-import { Title } from '../Title/Title';
 import { Input } from '../Input/Input';
 import Button from '../Button/Button';
 import { Section } from '../Section/Section';

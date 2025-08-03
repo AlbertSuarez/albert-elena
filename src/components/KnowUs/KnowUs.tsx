@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './KnowUs.module.css';
-import { Title } from '../Title/Title';
 import { Section } from '../Section/Section';
 
 const KnowUs: React.FC = () => {
