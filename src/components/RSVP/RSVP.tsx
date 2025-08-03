@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import styles from './RSVP.module.css';
-import { Title } from '../Title/Title';
 import { Input } from '../Input/Input';
 import Button from '../Button/Button';
+import { Section } from '../Section/Section';
 
 interface FormData {
   name: string;
@@ -99,83 +99,85 @@ const RSVP: React.FC = () => {
   };
 
   return (
-    <section id="confirmacio" className={styles.rsvpSection}>
-      <div className={styles.container}>
-        <Title condensed>CONFIRMACIÓ D&apos;ASSISTÈNCIA</Title>
-        <div className={styles.rsvpContent}>
-          <p className={styles.rsvpIntro}>
-            Si us plau, confirmeu la vostra assistència abans del <strong>1 d&apos;octubre de 2025</strong>.
-          </p>
+    <Section
+      id="confirmacio"
+      title="CONFIRMACIÓ D&apos;ASSISTÈNCIA"
+      style="secondary-light"
+      dark={true}
+    >
+      <div className={styles.rsvpContent}>
+        <p className={styles.rsvpIntro}>
+          Si us plau, confirmeu la vostra assistència abans del <strong>1 d&apos;octubre de 2025</strong>.
+        </p>
+        
+        <form className={styles.rsvpForm} onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            label="Nom complet *"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Joan Pere"
+            required
+          />
+          <Input
+            type="tel"
+            name="phone"
+            label="Telèfon *"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="Exemple: 666555444"
+            required
+          />
+
+          <Input
+            type="select"
+            name="children"
+            label="Nombre de nens"
+            value={formData.children}
+            onChange={handleChange}
+            options={[
+              { label: 'Cap nen', value: '0' },
+              { label: '1 nen', value: '1' },
+              { label: '2 nens', value: '2' },
+              { label: '3 nens', value: '3' },
+            ]}
+          />
+
+          <Input
+            type="select"
+            name="accommodation"
+            label="Allotjament"
+            value={formData.accommodation}
+            onChange={handleChange}
+            options={[
+              { label: 'No em quedaré a dormir', value: 'no' },
+              { label: 'Sí, em quedaré a dormir', value: 'yes' },
+            ]}
+          />
+
+          <Input
+            type="textarea"
+            name="dietary"
+            label="Requisits dietètics o al·lèrgies"
+            value={formData.dietary}
+            onChange={handleChange}
+            placeholder="Indiqueu qualsevol al·lèrgia o requisit dietètic especial..."
+          />
+
+          <Input
+            type="textarea"
+            name="message"
+            label="Missatge per als nuvis"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Escriviu-nos un missatge..."
+          />
           
-          <form className={styles.rsvpForm} onSubmit={handleSubmit}>
-            <Input
-              type="text"
-              label="Nom complet *"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Joan Pere"
-              required
-            />
-            <Input
-              type="tel"
-              name="phone"
-              label="Telèfon *"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Exemple: 666555444"
-              required
-            />
-
-            <Input
-              type="select"
-              name="children"
-              label="Nombre de nens"
-              value={formData.children}
-              onChange={handleChange}
-              options={[
-                { label: 'Cap nen', value: '0' },
-                { label: '1 nen', value: '1' },
-                { label: '2 nens', value: '2' },
-                { label: '3 nens', value: '3' },
-              ]}
-            />
-
-            <Input
-              type="select"
-              name="accommodation"
-              label="Allotjament"
-              value={formData.accommodation}
-              onChange={handleChange}
-              options={[
-                { label: 'No em quedaré a dormir', value: 'no' },
-                { label: 'Sí, em quedaré a dormir', value: 'yes' },
-              ]}
-            />
-
-            <Input
-              type="textarea"
-              name="dietary"
-              label="Requisits dietètics o al·lèrgies"
-              value={formData.dietary}
-              onChange={handleChange}
-              placeholder="Indiqueu qualsevol al·lèrgia o requisit dietètic especial..."
-            />
-
-            <Input
-              type="textarea"
-              name="message"
-              label="Missatge per als nuvis"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Escriviu-nos un missatge..."
-            />
-            
-            <Button type="submit" disabled={isSubmitting} onClick={() => {}}>
-              {isSubmitting ? 'Enviant...' : 'Confirmar assistència'}
-            </Button>
-          </form>
-        </div>
+          <Button type="submit" disabled={isSubmitting} onClick={() => {}}>
+            {isSubmitting ? 'Enviant...' : 'Confirmar assistència'}
+          </Button>
+        </form>
       </div>
       
       {showSuccessModal && (
@@ -193,7 +195,7 @@ const RSVP: React.FC = () => {
           </div>
         </div>
       )}
-    </section>
+    </Section>
   );
 };
 

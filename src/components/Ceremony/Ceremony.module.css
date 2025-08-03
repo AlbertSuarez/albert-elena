@@ -1,52 +1,51 @@
-.section {
-  background-color: var(--secondary);
-  padding: 4rem 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 .ceremonyContent {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  display: flex;
+  flex-direction: row-reverse;
   align-items: center;
-}
-
-.venueImg {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 32px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.venueInfo h3 {
-  font-size: 1.5rem;
-  color: var(--grey);
-  margin-bottom: 1rem;
-}
-
-.ceremonyDetails {
-  margin-top: 2rem;
-}
-
-.detailItem {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  color: var(--grey);
+  justify-content: space-around;
 }
 
 @media (max-width: 768px) {
   .ceremonyContent {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+   flex-direction: column;
+   margin-bottom: -32px;
+  }
+}
+
+.venueImage img {
+  max-width: 440px;
+}
+
+@media (max-width: 768px) {
+  .venueImage img {
+    max-height: 250px;
+  }
+}
+
+.ceremonyDetails {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  color: var(--grey);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .detailItem {
+    font-size: 16px;
   }
   
-  .venueImg {
-    height: 300px;
+  .ceremonyContent {
+    grid-template-columns: 1fr;
   }
-} 
+}

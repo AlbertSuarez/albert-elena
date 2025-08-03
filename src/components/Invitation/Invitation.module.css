@@ -13,6 +13,7 @@
 @media (max-width: 480px) {
   .invitation {
     min-height: 50vh;
+    padding: 0.5rem;
   }
 }
 
@@ -27,4 +28,10 @@
 .invitationContent p {
   font-size: 20px;
   line-height: 150%;
+}
+
+@media (max-width: 768px) {
+  .invitationContent p {
+    font-size: 16px;
+  }
 }

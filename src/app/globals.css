@@ -17,10 +17,13 @@
 
 :root {
   --background: #EBDAA8;
+  --background-light: #DEC6A8;
   --grey: #2C2C2C;
   --primary: #313930;
   --primary-light: #A2BBA0;
   --secondary: #CA9C8D;
+  --secondary-dark: #6D5247;
+  --secondary-light: #f5e6d3;
   --white: #FFFFFF;
   --shadow: rgba(0, 0, 0, 0.1);
   --border-radius: 15px;

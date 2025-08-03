@@ -1,0 +1,46 @@
+
+.detailItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.detailItemIcon {
+  display: flex;
+  align-items: center;
+  width: 52px;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.detailItemIcon svg {
+  position: relative;
+  z-index: 2;
+}
+
+.icon {
+  position: relative;
+  z-index: 2;
+  fill: var(--secondary-dark);
+}
+
+.background {
+  position: absolute;
+  width: 52px;
+  height: auto;
+  z-index: 1;
+}
+
+.detailItemContent {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--secondary-dark);
+  line-height: 1.2;
+}
