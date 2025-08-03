@@ -4,6 +4,9 @@ import styles from './Ceremony.module.css';
 import Button from '../Button/Button';
 import { Section } from '../Section/Section';
 
+import cx from 'classnames';
+import { DetailItem } from './DetailItem';
+
 const Ceremony: React.FC = () => {
   return (
       <Section
@@ -13,18 +16,20 @@ const Ceremony: React.FC = () => {
         titleDirection="left"
       >
         <div className={styles.ceremonyContent}>
-          <div className={styles.venueImage}>
+          {/* <div className={styles.venueImage}>
             <img src="/assets/images/mas-muxach.jpg" alt="Mas Muxach" className={styles.venueImg} />
+          </div> */}
+          <div className={styles.venueImage}>
+            <img src="/assets/images/cerimonia.png" alt="Mas Muxach" className={styles.venueImg} />
           </div>
           <div className={styles.venueInfo}>
             <div className={styles.ceremonyDetails}>
-              <div className={styles.detailItem}>
-                <strong>Data:</strong> 11 d&apos;abril de 2026 (Dissabte)
-              </div>
-              <div className={styles.detailItem}>
-                Masia Mas Muxach, Brunyola (Girona)
-              </div>
-              <div className={styles.detailItem}>
+
+              <DetailItem icon="calendar" title="DATA" content="Dissabte, 11 d'abril de 2026" />
+              <DetailItem icon="clock" title="HORA" content="A les 12:30am" />
+              <DetailItem icon="location" title="LLOC" content="Masia Mas Muxach, Brunyola (Girona)" />
+              
+              <div className={cx(styles.detailItem, styles.button)}>
                 <Button onClick={() => { window.open('https://maps.app.goo.gl/V6TaM6MgLW6GKd8U9', '_blank') }}>Veure Ubicació</Button>
               </div>
             </div>

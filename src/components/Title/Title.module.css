@@ -3,6 +3,7 @@
 .container {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .container.right {
@@ -10,21 +11,34 @@
 }
 
 .icon {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   position: absolute;
   margin-bottom: 20px;
 }
 
+@media (max-width: 768px) {
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
 .title {
   font-family: var(--font-primary);
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: start;
   font-weight: 300;
   position: relative;
   letter-spacing: 4px;
   color: var(--primary);
-  margin: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
 }
 
 .left > .title {

@@ -13,6 +13,7 @@
 @media (max-width: 480px) {
   .invitation {
     min-height: 50vh;
+    padding: 0.5rem;
   }
 }
 

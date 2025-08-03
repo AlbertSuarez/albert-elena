@@ -103,6 +103,7 @@ const RSVP: React.FC = () => {
       id="confirmacio"
       title="CONFIRMACIÓ D&apos;ASSISTÈNCIA"
       style="secondary-light"
+      dark={true}
     >
       <div className={styles.rsvpContent}>
         <p className={styles.rsvpIntro}>

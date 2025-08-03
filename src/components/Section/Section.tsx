@@ -7,6 +7,7 @@ type SectionProps = {
   title?: string;
   titleDirection?: 'left' | 'right';
   id: string;
+  dark?: boolean;
 }
 
 export const Section = ({
@@ -14,14 +15,15 @@ export const Section = ({
   id,
   title,
   style = 'white',
-  titleDirection = 'left'
+  titleDirection = 'left',
+  dark = false
 }: SectionProps) => {
   return (
     <section id={id} className={`${styles.section} ${styles[style]}`}>
       <div className={styles.container}>
         {title && (
           <div className={styles.title}>
-            <Title direction={titleDirection} condensed>{title}</Title>
+            <Title direction={titleDirection} condensed dark={dark}>{title}</Title>
           </div>
         )}
         {children}
