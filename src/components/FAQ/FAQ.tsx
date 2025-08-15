@@ -14,12 +14,8 @@ const FAQ: React.FC = () => {
 
   const faqData: FAQItem[] = [
     {
-      question: "Com arribar a Mas Muxach?",
-      answer: "La masia està situada a Brunyola (Girona). Recomanem venir en cotxe ja que és un entorn rural. Podeu trobar la ubicació exacta al mapa de la pàgina. A més, el fet de poder-se quedar a dormir permet allargar la festa fins tard sense preocupar-se pel viatge de tornada!"
-    },
-    {
-      question: "Hi ha aparcament disponible?",
-      answer: "Sí, Mas Muxach disposa d'aparcament gratuït per a tots els convidats."
+      question: "Com arribar a Mas Muxach i on aparcar?",
+      answer: "La masia està a Brunyola (Girona) i disposa d'aparcament gratuït. Si us quedeu a dormir, us recomanem venir en cotxe. Per a qui no es quedi a dormir o no disposi d'un vehicle, parlarem en un futur de com gestionar-ho."
     },
     {
       question: "Quin és el codi de vestimenta?",
@@ -31,15 +27,15 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Què inclou l'allotjament a la masia?",
-      answer: "L'allotjament inclou habitació compartida, llençols, i esmorzar l'endemà al matí. Porteu roba còmoda per dormir!"
+      answer: "L'allotjament inclou habitació compartida, llençols i esmorzar l'endemà al matí. Porteu roba còmoda per dormir!"
     },
     {
       question: "Fins a quina hora és la festa?",
-      answer: "La festa continuarà fins tard! Per a aquells que es quedin a dormir, podran continuar celebrant sense preocupacions."
+      answer: "La festa no té hora de finalització! La barra lliure i el DJ duraran 3 hores aproximadament, però la festa continuarà fins que tothom marxi. Nosaltres oferirem més música i sangria de cava, vosaltres només heu de portar les ganes de ballar i gaudir!"
     },
     {
       question: "Hi haurà música en directe?",
-      answer: "Tindrem DJ i una llista de reproducció col·laborativa. Passarem un enllaç quan quedi menys perquè pugueu afegir les vostres cançons preferides!"
+      answer: "Tindrem DJ i una llista de reproducció col·laborativa. Passarem un enllaç més endavant perquè pugueu afegir les vostres cançons preferides!"
     },
     {
       question: "Què passa si plou?",
@@ -47,7 +43,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Hi ha llista de noces?",
-      answer: "No esperem cap regal a canvi, només la vostra presència i estima. Això és el que realment ens fa feliços!"
+      answer: "No, no ens agrada el concepte que tot convidat a un casament hagi de cobrir el seu cobert. Hem decidit fer aquesta celebració perquè ens fa il·lusió reunir-vos per celebrar el nostre enllaç. Per això, no esperem cap regal a canvi, només la vostra presència i estima. Això és el que realment ens fa feliços!"
     }
   ];
 
