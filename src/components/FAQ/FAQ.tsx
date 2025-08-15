@@ -15,7 +15,7 @@ const FAQ: React.FC = () => {
   const faqData: FAQItem[] = [
     {
       question: "Quin és el codi de vestimenta?",
-      answer: "Elegant informal. Recomanem roba còmoda ja que hi haurà ball i l'esdeveniment és en un entorn rural."
+      answer: "Elegant i informal. Recomanem roba còmoda ja que hi haurà ball i l'esdeveniment és en un entorn rural."
     },
     {
       question: "Hi ha aparcament disponible?",
@@ -31,7 +31,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Fins a quina hora és la festa?",
-      answer: "La festa continuarà fins tard! Per als qui es quedin a dormir, podran continuar celebrant sense preocupacions."
+      answer: "La festa continuarà fins tard! Per a aquells que es quedin a dormir, podran continuar celebrant sense preocupacions."
     }
   ];
 
