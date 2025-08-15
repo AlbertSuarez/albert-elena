@@ -209,7 +209,7 @@ const RSVPContent: React.FC = () => {
             <h3>ENVIAT!</h3>
             <div className={styles.modalButtons}>
               <Button 
-                onClick={() => window.open('https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MmQ2cnBlcGpqcTB1MjBiZHRmdTluM3B1ZHZfMjAyNjA0MTFUMTAzMDAwWiBlbGVuYS5ydWl6LmJkbkBt&tmsrc=elena.ruiz.bdn%40gmail.com', '_blank')}
+                onClick={() => window.open('https://calendar.app.google/wCPczjrVFBcAdusy8', '_blank')}
               >
                 Afegeix al calendari
               </Button>
