@@ -14,7 +14,7 @@ const FAQ: React.FC = () => {
 
   const faqData: FAQItem[] = [
     {
-      question: "Com arribar a Mas Muxach i on aparcar?",
+      question: "Com arribar a Mas Muxach?",
       answer: "La masia està a Brunyola (Girona) i disposa d'aparcament gratuït. Si us quedeu a dormir, us recomanem venir en cotxe. Per a aquells que no es quedin a dormir o no disposin d'un vehicle, parlarem en un futur de com gestionar-ho."
     },
     {
