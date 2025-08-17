@@ -1,6 +1,7 @@
 import Button from "../Button/Button"
 import styles from "./SucessPage.module.css"
 import Image from "next/image"
+import cx from "classnames"
 
 export const SuccessPage = ({
   successMessageRef,
@@ -21,12 +22,13 @@ export const SuccessPage = ({
     </div>
     <h3 className={styles.successTitle}>Enviat!</h3>
     <p className={styles.successText}>
-      Us anirem informant de més novetats quan s&apos;apropi la data! Mentres tant, pots afegir l&apos;esdeveniment al teu calendari per no oblidar la data.
+      Les teves dades han estat enviades correctament. T&apos;enviarem més novetats quan s&apos;apropi la data.
     </p>
     <div className={styles.successButton}>
       <Button 
         onClick={() => window.open('https://calendar.app.google/wCPczjrVFBcAdusy8', '_blank')}
       >
+        <img src="/assets/images/icons/calendar.svg" alt="Calendar" />
         Afegeix al calendari
       </Button>
     </div>

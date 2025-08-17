@@ -25,6 +25,7 @@
   justify-content: center;
   align-items: center;
   will-change: transform, opacity;
+  margin-right: 2rem;
 }
 
 .imageWrapper > span,
@@ -46,7 +47,7 @@
   font-size: 2.5rem;
   font-weight: bold;
   color: #2C3E2C;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-family: inherit;
   opacity: 0;
   transform: translateY(20px);
@@ -69,9 +70,18 @@
   animation: fadeInUp 0.6s ease-out 0.8s forwards;
 }
 
+.successButton button {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+}
+
 @media (max-width: 768px) {
   .successMessage {
-    padding: 5rem 1rem;
+    padding: 5rem 0.25rem;
+    padding-top: 4rem;
   }
   
   .successIcon img {
@@ -90,6 +100,10 @@
   
   .successText {
     font-size: 16px;
+  }
+
+  .successTextBottom {
+    margin-bottom: 14px;
   }
 }
 
