@@ -124,7 +124,7 @@ export const Form = ({
   return (
     <>
     <p className={styles.rsvpIntro}>
-      Si us plau, confirmeu la vostra assistència abans del <strong>1 d&apos;octubre de 2025</strong>.
+      Si us plau, confirmeu la vostra assistència abans del <strong>15 d&apos;octubre de 2025</strong>.
     </p>
     
     <form className={styles.rsvpForm} onSubmit={handleSubmit}>
