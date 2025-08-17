@@ -1,0 +1,61 @@
+/* Audio control button */
+.audioControlButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInButton 0.5s ease-out 1s forwards;
+}
+
+.audioControlButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.audioControlButton:active {
+  transform: scale(0.95);
+}
+
+.audioControlButton img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* Make icons white */
+}
+
+@keyframes fadeInButton {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .audioControlButton {
+    width: 64px;
+    height: 64px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .audioControlButton img {
+    width: 32px;
+    height: 32px;
+  }
+}
