@@ -9,7 +9,12 @@
   border: 2px solid #F5E6D3;
   border-radius: 15px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faqItem.active {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .faqQuestion {
@@ -35,7 +40,7 @@
 .faqIcon {
   font-size: 1.5rem;
   font-weight: bold;
-  transition: all 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faqItem.active .faqIcon {
@@ -45,12 +50,14 @@
 .faqAnswer {
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3s ease;
   background: #FFFFFF;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 1.5rem;
 }
 
 .faqItem.active .faqAnswer {
-  max-height: 200px;
+  max-height: 300px;
   padding: 1.5rem;
 }
 
@@ -58,4 +65,13 @@
   margin: 0;
   color: #5A6B5A;
   line-height: 1.6;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease 0.1s, 
+              transform 0.3s ease 0.1s;
+}
+
+.faqItem.active .faqAnswer p {
+  opacity: 1;
+  transform: translateY(0);
 } 
