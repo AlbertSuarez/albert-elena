@@ -15,6 +15,12 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   transition: all 0.3s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Initial fade-in animation - only applied once */
+.audioControlButton.initial {
   opacity: 0;
   transform: scale(0.8);
   animation: fadeInButton 0.5s ease-out 1s forwards;
@@ -43,6 +49,30 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Pulsing animation for when music is playing */
+.pulsing {
+  animation: pulse 0.8s ease-in-out infinite;
+  opacity: 1 !important; /* Ensure button stays visible */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 1;
   }
 }
 

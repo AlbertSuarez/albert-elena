@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useState, useRef } from "react";
 import styles from "./AudioControl.module.css";
 
@@ -16,6 +17,7 @@ export const AudioControl = ({
 }: AudioControlProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showButton, setShowButton] = useState(false);
+  const [isInitial, setIsInitial] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -63,6 +65,12 @@ export const AudioControl = ({
     };
   }, [audioSrc, volume, autoPlay]);
 
+  useEffect(() => {
+    if (isInitial) {
+      setTimeout(() => setIsInitial(false), 1500);
+    }
+  }, [isInitial]);
+
   const toggleAudio = () => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -78,7 +86,10 @@ export const AudioControl = ({
   if (!showButton) return null;
 
   return (
-    <button className={styles.audioControlButton} onClick={toggleAudio}>
+    <button 
+      className={`${styles.audioControlButton} ${isInitial ? styles.initial : ''} ${isPlaying ? styles.pulsing : ''}`} 
+      onClick={toggleAudio}
+    >
       <img 
         src={isPlaying ? "/assets/images/icons/pause.svg" : "/assets/images/icons/play.svg"} 
         alt={isPlaying ? "Pause" : "Play"} 

@@ -30,6 +30,7 @@
   font-weight: 600;
   color: var(--primary);
   transition: all 0.3s ease;
+  text-align: left;
 }
 
 .faqQuestion:hover {
