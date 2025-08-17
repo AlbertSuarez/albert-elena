@@ -1,17 +1,25 @@
 import Button from "../Button/Button"
 import styles from "./SucessPage.module.css"
 import Image from "next/image"
-import cx from "classnames"
+import Confetti from "../Confetti/Confetti"
+import { useEffect, useState } from "react"
 
 export const SuccessPage = ({
   successMessageRef,
 }: {
   successMessageRef: React.RefObject<HTMLDivElement | null>;
 }) => {
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  useEffect(() => {
+    setShowConfetti(true);
+  }, []);
+
   return (
     <div className={styles.successMessage} ref={successMessageRef}>
     <div className={styles.successIcon}>
       <div className={styles.imageWrapper}>
+       <Confetti isActive={showConfetti} duration={10000} particleCount={12} />
         <Image 
           src="/assets/images/figures/enviat.png" 
           alt="Enviat" 

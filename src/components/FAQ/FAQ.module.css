@@ -15,7 +15,7 @@
 .faqQuestion {
   width: 100%;
   padding: 1.5rem;
-  background: #F5E6D3;
+  background: var(--secondary-light);
   border: none;
   cursor: pointer;
   display: flex;
@@ -23,12 +23,12 @@
   align-items: center;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #2C3E2C;
+  color: var(--primary);
   transition: all 0.3s ease;
 }
 
 .faqQuestion:hover {
-  background: #8FBC8F;
+  background: var(--primary);
   color: #FFFFFF;
 }
 
