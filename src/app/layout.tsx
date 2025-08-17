@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     description: 'Ens casem l\'11 d\'abril de 2026 a Mas Muxach, Brunyola. Descobreix tots els detalls de la nostra celebració.',
     images: [
       {
-        url: 'assets/images/albert-elena.png',
-        width: 1200,
-        height: 630,
-        alt: 'Albert & Elena',
+        url: 'assets/images/og.jpg',
+        width: 2400,
+        height: 1260,
+        alt: 'Albert & Elena - Casament 11.04.26',
       },
     ],
     siteName: 'Albert & Elena - Casament',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Albert & Elena - Casament 11.04.26',
     description: 'Ens casem l\'11 d\'abril de 2026 a Mas Muxach, Brunyola. Descobreix tots els detalls de la nostra celebració.',
-    images: ['assets/images/albert-elena.png'],
+    images: ['assets/images/og.jpg'],
   },
   icons: {
     icon: [
@@ -52,6 +52,14 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preload custom font to prevent FOUT */}
+        <link
+          rel="preload"
+          href="/assets/fonts/le-petit-cochon.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Kalam:wght@300;400;700&family=Caveat:wght@400;500;600;700&family=Amatic+SC:wght@400;700&family=Fredoka+One&display=swap"
           rel="stylesheet"

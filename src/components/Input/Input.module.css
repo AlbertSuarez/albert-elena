@@ -9,9 +9,15 @@
 .label {
   margin-bottom: 0.2rem;
   color: var(--primary);
-  font-size: 1rem;
+  font-size: var(--body-font-size-desktop);
   padding-left: 2px;
   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .label {
+    font-size: var(--body-font-size-mobile);
+  }
 }
 
 .input input,
@@ -26,8 +32,16 @@
   outline: none;
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   box-shadow: 0px 0px 20px -18px;
-  font-size: 1rem;
+  font-size: var(--body-font-size-desktop);
   color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .input input,
+  .input select,
+  .input textarea {
+    font-size: var(--body-font-size-mobile);
+  }
 }
 
 .input option {

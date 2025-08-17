@@ -1,0 +1,202 @@
+
+
+/* Success message styles */
+.successMessage {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.successIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper {
+  opacity: 0;
+  transform: scale(0.3) translateY(50px);
+  animation: scaleInUp 2s ease-out 0.5s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  will-change: transform, opacity;
+  position: relative;
+}
+
+.imageWrapper > span,
+.imageWrapper > img {
+  transition: inherit !important;
+  z-index: 15;
+  margin-right: 2rem;
+}
+
+.successIcon img,
+.successIcon span,
+.successIcon [data-nimg] {
+  width: 180px !important;
+  height: auto !important;
+  max-width: 100% !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.successTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2C3E2C;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out 0.4s forwards;
+}
+
+.successText {
+  font-size: var(--body-font-size-desktop);
+  color: #5A6B5A;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out 0.6s forwards;
+}
+
+.successButton {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out 0.8s forwards;
+}
+
+.successButton button {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .successMessage {
+    padding: 5rem 0.25rem;
+    padding-top: 4rem;
+  }
+  
+  .successIcon img {
+    width: 150px !important;
+  }
+  
+  .imageWrapper {
+    opacity: 0;
+    transform: scale(0.3) translateY(40px);
+    animation: scaleInUp 1s ease-out 0.5s forwards;
+  }
+  
+  .successTitle {
+    font-size: 2rem;
+  }
+  
+  .successText {
+    font-size: var(--body-font-size-mobile);
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleInUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(30px);
+  }
+  30% {
+    opacity: 0.6;
+    transform: scale(0.8) translateY(25px);
+  }
+  70% {
+    opacity: 0.9;
+    transform: scale(1) translateY(-5px);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(0.95) translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Color flash animations */
+.flashOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  animation: colorFlash 3s ease-in-out infinite;
+}
+
+
+
+@keyframes colorFlash {
+  0% { 
+    background-color: transparent;
+    opacity: 0;
+  }
+  10% { 
+    background-color: rgba(255, 215, 0, 0.15);
+    opacity: 1;
+  }
+  20% { 
+    background-color: rgba(255, 105, 180, 0.15);
+    opacity: 1;
+  }
+  30% { 
+    background-color: rgba(124, 252, 0, 0.15);
+    opacity: 1;
+  }
+  40% { 
+    background-color: rgba(255, 69, 0, 0.15);
+    opacity: 1;
+  }
+  50% { 
+    background-color: rgba(138, 43, 226, 0.15);
+    opacity: 1;
+  }
+  60% { 
+    background-color: rgba(0, 191, 255, 0.15);
+    opacity: 1;
+  }
+  70% { 
+    background-color: rgba(255, 20, 147, 0.15);
+    opacity: 1;
+  }
+  80% { 
+    background-color: rgba(50, 205, 50, 0.15);
+    opacity: 1;
+  }
+  90% { 
+    background-color: rgba(255, 140, 0, 0.15);
+    opacity: 1;
+  }
+  100% { 
+    background-color: transparent;
+    opacity: 0;
+  }
+}

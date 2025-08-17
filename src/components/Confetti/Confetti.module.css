@@ -1,0 +1,66 @@
+.confettiContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.confettiPiece {
+  position: absolute;
+  border-radius: 50%;
+  animation: confettiFall ease-out forwards;
+  will-change: transform;
+}
+
+.confettiPiece:nth-child(odd) {
+  border-radius: 0;
+  transform-origin: center;
+}
+
+.confettiPiece:nth-child(3n) {
+  border-radius: 2px;
+  width: 6px !important;
+  height: 12px !important;
+}
+
+.confettiPiece:nth-child(4n) {
+  border-radius: 50% 0;
+  animation-name: confettiFall;
+}
+
+.confettiPiece:nth-child(5n) {
+  border-radius: 0 50%;
+  animation-name: confettiFall;
+}
+
+/* Simple one-time radial expansion animation */
+@keyframes confettiFall {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(45deg) scale(1);
+  }
+  100% {
+    transform: translate(var(--move-x), var(--move-y)) rotate(180deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .confettiPiece {
+    animation-duration: 3s !important;
+  }
+  
+  .confettiPiece:nth-child(3n) {
+    width: 4px !important;
+    height: 8px !important;
+  }
+}

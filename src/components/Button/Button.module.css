@@ -7,7 +7,7 @@
   transition: background-color 0.3s ease;
   cursor: pointer;
   border: none;
-  font-size: 18px;
+  font-size: var(--body-font-size-desktop);
 }
 
 .button:hover {
@@ -17,4 +17,10 @@
 .button.disabled {
   background-color: var(--secondary);
   cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .button {
+    font-size: var(--body-font-size-mobile);
+  }
 }
