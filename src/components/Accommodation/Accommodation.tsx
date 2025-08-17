@@ -52,10 +52,10 @@ const Accommodation: React.FC = () => {
           />
         </div>
         <div className={`${styles.accommodationItem} ${isVisible ? styles.animate1 : ''}`}>
-          📍 La masia inclou habitacions per quedar-s&apos;hi
+          📍 La masia inclou habitacions per quedar-se
         </div>
         <div className={`${styles.accommodationItem} ${isVisible ? styles.animate2 : ''}`}>
-          🍳 Amb un bon esmorzar a l&apos;endemà
+          🍳 Amb un bon esmorzar l&apos;endemà
         </div>
         <div className={`${styles.accommodationItem} ${isVisible ? styles.animate3 : ''}`}>
           💃 Podem allargar la festa sense presses ni complicacions
