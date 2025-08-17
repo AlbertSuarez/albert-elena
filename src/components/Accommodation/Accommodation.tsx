@@ -63,10 +63,14 @@ const Accommodation: React.FC = () => {
         <div>
           <p className={`${styles.bottomText} ${isVisible ? styles.animate4 : ''}`}>👉 Avisa&apos;ns al <strong>formulari</strong> si et vols quedar!</p>
           <div className={`${styles.figureContainer} ${isVisible ? styles.animate4 : ''}`}>
-            <img 
+            <Image 
               src="/assets/images/figures/figura-allotjament-2.png" 
               alt="Accommodation decoration" 
               className={styles.figure}
+              loading="eager"
+              width={0}
+              height={0}
+              style={{ width: '100%', height: 'auto' }}
             />
         </div>
         </div>
