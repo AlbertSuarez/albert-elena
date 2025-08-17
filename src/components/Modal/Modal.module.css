@@ -1,0 +1,118 @@
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: modalFadeIn 0.3s ease-out;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #999;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  color: #333;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.modalContent h3 {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--primary);
+  margin: 0 0 2rem 0;
+  letter-spacing: 4px;
+}
+
+.modalButtons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.modalContent p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.modalContent.error {
+  border-left: 4px solid #e74c3c;
+}
+
+.modalContent.error p {
+  color: #c0392b;
+}
+
+.modalContent.success {
+  border-left: 4px solid #27ae60;
+}
+
+.modalContent.success p {
+  color: #229954;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .rsvpForm {
+    gap: 1.5rem;
+  }
+  
+  .modalContent {
+    padding: 2rem 3rem;
+    margin: 0 20px;
+  }
+  
+  .modalContent h3 {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+  
+  .modalContent p {
+    font-size: 1.1rem;
+  }
+} 

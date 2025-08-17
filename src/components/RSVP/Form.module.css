@@ -1,0 +1,57 @@
+.rsvpIntro {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #5A6B5A;
+}
+
+@media (max-width: 768px) {
+  .rsvpIntro {
+    font-size: 16px;
+  }
+}
+
+.rsvpForm {
+  display: grid;
+  gap: 2rem;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.rsvpForm.fadeOut {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.submitBtn {
+  background: linear-gradient(135deg, #8FBC8F, #98C9A3);
+  color: #FFFFFF;
+  border: none;
+  padding: 1.2rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  justify-self: center;
+  min-width: 200px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7A9F7A, #8FBC8F);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loadingText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
