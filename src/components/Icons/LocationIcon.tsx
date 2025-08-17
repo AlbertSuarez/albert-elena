@@ -11,7 +11,7 @@ const LocationIcon: React.FC<LocationIconProps> = ({
   width = 24, 
   height = 24 
 }) => {
-  const clipId = `locationClip-${Math.random().toString(36).substr(2, 9)}`;
+  const clipId = 'locationClip-static';
   
   return (
     <svg 
