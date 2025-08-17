@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     description: 'Ens casem l\'11 d\'abril de 2026 a Mas Muxach, Brunyola. Descobreix tots els detalls de la nostra celebració.',
     images: [
       {
-        url: 'assets/images/albert-elena.png',
-        width: 1200,
-        height: 630,
-        alt: 'Albert & Elena',
+        url: 'assets/images/og.jpg',
+        width: 2400,
+        height: 1260,
+        alt: 'Albert & Elena - Casament 11.04.26',
       },
     ],
     siteName: 'Albert & Elena - Casament',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Albert & Elena - Casament 11.04.26',
     description: 'Ens casem l\'11 d\'abril de 2026 a Mas Muxach, Brunyola. Descobreix tots els detalls de la nostra celebració.',
-    images: ['assets/images/albert-elena.png'],
+    images: ['assets/images/og.jpg'],
   },
   icons: {
     icon: [
