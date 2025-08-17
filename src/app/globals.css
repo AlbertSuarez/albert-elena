@@ -19,7 +19,8 @@
   --background: #EBDAA8;
   --background-light: #DEC6A8;
   --grey: #2C2C2C;
-  --primary: rgb(44, 62, 44);
+  --primary: #2c3e2c;
+  --primary-dark: #313930;
   --primary-light: #A2BBA0;
   --secondary: #CA9C8D;
   --secondary-dark: #6D5247;
@@ -31,14 +32,6 @@
 
   --font-primary: 'Le Petit Cochon', cursive;
   --font-secondary: 'Poppins', sans-serif;
-  
-  /* Legacy variables for backward compatibility */
-  --primary-color: #A2BBA0;
-  --secondary-color: #CA9C8D;
-  --accent-color: #313930;
-  --background-color: #EBDAA8;
-  --text-color: #313930;
-  --text-light: #5A6B5A;
 }
 
 * {
@@ -50,8 +43,8 @@
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--background-color);
+  color: var(--primary-dark);
+  background-color: var(--background);
   overflow-x: hidden;
 }
 
