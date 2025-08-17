@@ -40,6 +40,12 @@
   text-align: center;
 }
 
+.button > button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 @media (max-width: 768px) {
   .detailItem {
     font-size: 16px;

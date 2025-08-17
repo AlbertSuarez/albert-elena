@@ -30,7 +30,10 @@ const Ceremony: React.FC = () => {
               <DetailItem icon="location" title="LLOC" content="Masia Mas Muxach, Brunyola (Girona)" />
               
               <div className={cx(styles.detailItem, styles.button)}>
-                <Button onClick={() => { window.open('https://maps.app.goo.gl/V6TaM6MgLW6GKd8U9', '_blank') }}>Veure Ubicació</Button>
+                <Button onClick={() => { window.open('https://maps.app.goo.gl/V6TaM6MgLW6GKd8U9', '_blank') }}>
+                  <img src="/assets/images/icons/marker.svg" alt="Map pin" />
+                  Veure ubicació
+                </Button>
               </div>
             </div>
           </div>
