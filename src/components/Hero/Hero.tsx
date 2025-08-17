@@ -26,17 +26,18 @@ const Hero: React.FC = () => {
           />
           <div className={styles.backgroundTransitionBorder}/>
         </div>
+        <div className={styles.backgroundFallback}/>
         
       <div className={`full-width ${styles.heroContent}`}>
         <div className={styles.titleContainer}>
-          <h1 className={`${styles.title} fade-in-up`}>
+          <h1 className={`${styles.title}`}>
             ALBERT + <br />
             <div>ELENA = <span className={styles.rings}></span></div>
           </h1>
         </div>
         
         <div className={cx(styles.weddingDetailsContainer, 'full-width')}>
-          <div className={`${styles.weddingDetails} fade-in-up`}>
+          <div className={`${styles.weddingDetails} ${styles.weddingDetailsBounce}`}>
               <svg 
                 className={styles.weddingDetailsSvg}
                 width="539" 

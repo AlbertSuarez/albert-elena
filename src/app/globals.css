@@ -12,14 +12,14 @@
   src: url('/assets/fonts/le-petit-cochon.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: block; /* Prevents FOUT by blocking text until font loads */
 }
 
 :root {
   --background: #EBDAA8;
   --background-light: #DEC6A8;
   --grey: #2C2C2C;
-  --primary: #313930;
+  --primary: rgb(44, 62, 44);
   --primary-light: #A2BBA0;
   --secondary: #CA9C8D;
   --secondary-dark: #6D5247;
