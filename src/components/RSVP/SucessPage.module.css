@@ -25,12 +25,14 @@
   justify-content: center;
   align-items: center;
   will-change: transform, opacity;
-  margin-right: 2rem;
+  position: relative;
 }
 
 .imageWrapper > span,
 .imageWrapper > img {
   transition: inherit !important;
+  z-index: 15;
+  margin-right: 2rem;
 }
 
 .successIcon img,
@@ -100,10 +102,6 @@
   
   .successText {
     font-size: 16px;
-  }
-
-  .successTextBottom {
-    margin-bottom: 14px;
   }
 }
 
