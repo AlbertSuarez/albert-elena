@@ -42,7 +42,7 @@ export const SuccessPage = ({
         </p>
         <div className={styles.successButton}>
           <Button 
-            onClick={() => window.open('https://calendar.app.google/wCPczjrVFBcAdusy8', '_blank')}
+            onClick={() => window.open('https://www.google.com/calendar/render?action=TEMPLATE&text=Albert%26Elena+%F0%9F%92%8D&dates=20260411T123000/20260412T110000&ctz=Europe/Madrid&details=%F0%9F%94%97+M%C3%A9s+detalls+a+https%3A%2F%2Falbertelena.wedding%2F', '_blank')}
           >
             <img src="/assets/images/icons/calendar.svg" alt="Calendar" />
             Afegeix al calendari
