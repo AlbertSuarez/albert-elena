@@ -24,7 +24,7 @@
 
 @media (max-width: 768px) {
   .backgroundFigure {
-    /* display: block; */
+    display: block;
     top: -30px;
     left: -50px;
   }
