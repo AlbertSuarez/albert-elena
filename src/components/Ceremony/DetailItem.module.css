@@ -39,8 +39,14 @@
 
 
 .title {
-  font-size: 14px;
+  font-size: var(--body-font-size-desktop);
   font-weight: 500;
   color: var(--secondary-dark);
   line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--body-font-size-mobile);
+  }
 }

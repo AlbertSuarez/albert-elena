@@ -26,12 +26,12 @@
 }
 
 .invitationContent p {
-  font-size: 20px;
+  font-size: var(--subtitle-font-size-desktop);
   line-height: 150%;
 }
 
 @media (max-width: 768px) {
   .invitationContent p {
-    font-size: 16px;
+    font-size: var(--body-font-size-mobile);
   }
 }

@@ -5,7 +5,7 @@
 }
 
 .knowUsIntro {
-  font-size: 1.2rem;
+  font-size: var(--body-font-size-desktop);
   color: #5A6B5A;
   margin-bottom: 3rem;
   line-height: 1.6;
@@ -13,7 +13,7 @@
 
 @media (max-width: 768px) {
   .knowUsIntro {
-    font-size: 16px;
+    font-size: var(--body-font-size-mobile);
     margin-bottom: 2rem;
   }
 }

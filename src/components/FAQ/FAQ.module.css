@@ -26,7 +26,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: var(--subtitle-font-size-desktop);
   font-weight: 600;
   color: var(--primary);
   transition: all 0.3s ease;
@@ -34,7 +34,13 @@
 
 .faqQuestion:hover {
   background: var(--primary);
-  color: #FFFFFF;
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .faqQuestion {
+    font-size: var(--subtitle-font-size-mobile);
+  }
 }
 
 .faqIcon {

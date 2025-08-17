@@ -32,6 +32,11 @@
 
   --font-primary: 'Le Petit Cochon', cursive;
   --font-secondary: 'Poppins', sans-serif;
+
+  --subtitle-font-size-desktop: 20px;
+  --subtitle-font-size-mobile: 18px;
+  --body-font-size-desktop: 18px;
+  --body-font-size-mobile: 16px;
 }
 
 * {

@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './Accommodation.module.css';
 import { Section } from '../Section/Section';
+import Image from 'next/image';
 
 const Accommodation: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,10 +40,15 @@ const Accommodation: React.FC = () => {
       <div ref={sectionRef}>
       <div className={styles.accommodationContent}>
         <div className={styles.backgroundFigure}>
-          <img 
+          <Image 
             src="/assets/images/figures/figura-allotjament.png" 
             alt="Background decoration" 
             className={styles.backgroundImage}
+            objectFit="cover"
+            loading="eager"
+            width={0}
+            height={0}
+            style={{ width: '100%', height: 'auto' }}
           />
         </div>
         <div className={`${styles.accommodationItem} ${isVisible ? styles.animate1 : ''}`}>
