@@ -96,9 +96,37 @@ Mock-up design created in [Canva](https://www.canva.com/) by [Elena Ruiz](https:
 
 ![Mock Up](docs/mock-up/mock-up.png)
 
+![Hero Mock Up](docs/mock-up/hero-mock.png)
+
 ## Screenshots
 
-_Coming soon..._
+### Desktop
+
+![Desktop Screenshot 1](docs/screenshots/desktop_1.png)
+
+![Desktop Screenshot 2](docs/screenshots/desktop_2.png)
+
+![Desktop Screenshot 3](docs/screenshots/desktop_3.png)
+
+![Desktop Screenshot 4](docs/screenshots/desktop_4.png)
+
+![Desktop Screenshot 5](docs/screenshots/desktop_5.png)
+
+![Desktop Screenshot 6](docs/screenshots/desktop_6.png)
+
+### Mobile
+
+![Mobile Screenshot 1](docs/screenshots/mobile_1.jpeg)
+
+![Mobile Screenshot 2](docs/screenshots/mobile_2.jpeg)
+
+![Mobile Screenshot 3](docs/screenshots/mobile_3.jpeg)
+
+![Mobile Screenshot 4](docs/screenshots/mobile_4.jpeg)
+
+![Mobile Screenshot 5](docs/screenshots/mobile_5.jpeg)
+
+![Mobile Screenshot 6](docs/screenshots/mobile_6.jpeg)
 
 ## Authors
 
