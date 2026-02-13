@@ -58,7 +58,7 @@ This is a simple, static, and responsive wedding website celebrating the marriag
 #### Event Schedule
 
 - **Date:** April 11th, 2026 (Saturday)
-- **Start Time:** 12:30 PM
+- **Start Time:** 12:00 PM
 - **Venue:** [Mas Muxach](https://maps.app.goo.gl/V6TaM6MgLW6GKd8U9)
 - **Accommodation:** Overnight stay available (Saturday to Sunday)
 - **Breakfast:** Sunday morning for overnight guests

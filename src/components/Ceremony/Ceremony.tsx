@@ -26,7 +26,7 @@ const Ceremony: React.FC = () => {
             <div className={styles.ceremonyDetails}>
 
               <DetailItem icon="calendar" title="DATA" content="Dissabte, 11 d'abril de 2026" />
-              <DetailItem icon="clock" title="HORA" content="A les 12:30h" />
+              <DetailItem icon="clock" title="HORA" content="A les 12:00h" />
               <DetailItem icon="location" title="LLOC" content="Masia Mas Muxach, Brunyola (Girona)" />
               
               <div className={cx(styles.detailItem, styles.button)}>
