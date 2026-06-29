@@ -1,0 +1,16 @@
+# Generated .cursorignore for Restb.ai
+# This file tells Cursor which files to ignore for indexing and AI context.
+
+*.log
+.DS_Store
+.angular/
+.eslintcache/
+.idea/
+.npm/
+.vscode/
+bazel-out/
+dist/
+logs/
+node_modules/
+out-tsc/
+tmp/
